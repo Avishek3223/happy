@@ -1,0 +1,21 @@
+
+
+.Back{
+    --bg-image: url(../../Utils/Assests/Price.jpg);
+    --bg-image-opacity: .25;
+    position: relative;
+    isolation: isolate;
+    border-bottom: 0.5rem solid #225c59;
+}
+
+.Back::after{
+    content: '';
+    opacity: var(--bg-image-opacity);
+    background-image: var(--bg-image);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+}

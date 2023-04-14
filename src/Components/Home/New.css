@@ -1,0 +1,27 @@
+
+.New{
+    --bg-image: url(../../Utils/Assests/Policy.jpg);
+    --bg-image-opacity: .12;
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    
+}
+
+.New::after{
+    content: '';
+    opacity: var(--bg-image-opacity);
+    background-image: var(--bg-image);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+}
+
+@media(max-width:600px){
+    .Over{
+        gap: 4rem;
+    }
+}

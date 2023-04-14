@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ::-webkit-scrollbar {
+  width: 0;
+} */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sansita&display=swap");
+
+.JustAnotherHand {
+  font-family: "Just Another Hand", cursive;
+}
+
+.RussoOne {
+  font-family: "Russo One";
+}
+
+.Sansita {
+  font-family: "Sansita";
+}
+
+#close-arrow {
+  transform: rotate(180deg);
+}
+
+.shadowSubscribe{
+  box-shadow: 20px 10px 20px  #225c59;
+}

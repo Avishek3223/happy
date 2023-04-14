@@ -1,0 +1,55 @@
+.subtract{
+    padding: 5rem 2rem;
+    background-color: #d9d9d9ac;
+}
+.subtract img{
+    width: 30%;
+    height: 100vh;
+    gap:2rem;
+}
+
+#subtract1{
+    float: right;
+}
+.box1 h1,.box2 h1,.box3 h1,.box4 h1{
+    font-size: 2rem;
+}
+
+.box1{
+    width: 40%;
+    position:absolute;
+    top:55rem;
+    left: 8rem;
+}
+.box2{
+    width: 40%;
+    position:absolute;
+    top:55rem;
+    left: 70rem;
+}
+.box3{
+    width: 40%;
+    position:absolute;
+    top:85rem;
+    left: 8rem;
+    
+}
+.box4{
+    width: 40%;
+    position:absolute;
+    top:85rem;
+    left: 70rem;
+    
+}
+
+.center-img{
+    position: absolute;
+    top:60rem;
+    left: 30rem;
+    width: 100%;
+    height: 10rem;
+}
+.center-img img{
+    width: 30rem;
+    height: 30rem;
+}

@@ -1,0 +1,89 @@
+
+.instructor-contanier {
+  margin-top: 1.5rem;
+  padding-bottom: 3rem;
+  border-bottom:2px solid #225c59;
+  background-image: url(../../Utils/Assests/about_us.jpg);
+}
+
+.row {
+  margin-top: 2rem;
+}
+
+.instructor-headline{
+  text-align: center;
+  background-color: #225c59;
+  color: #ffffff;
+  padding: 8px 20px;
+  box-shadow: 2px 2px #3b393998;
+  cursor: pointer;
+}
+
+.inst-card {
+  margin-bottom: 5rem;
+  z-index: 10;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.instructor-card-text{
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 9rem;
+  bottom: 0;
+  padding-top: 4rem;
+  color: #ffff;
+  background: linear-gradient(
+    180deg,
+    #ffffff00 0%,
+    #225c59 100%
+  );
+}
+
+/* h4:hover, h6 :hover{
+  border: #ffff solid 3px;
+} */
+
+.inst-card .Box {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.342);
+  width: 18rem;
+  height: 24rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: -20;
+  background-position: center center;
+}
+
+@media only screen and (max-width: 720px) {
+
+  .instructor-contanier {
+    margin-bottom: none;
+  }
+
+  .row {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .inst-card {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .inst-card .Box {
+    width: 17rem;
+    height: 23rem;
+  }
+
+}
+
+@media (orientation : landscape ) {
+  .inst-card .Box {
+    width: 21rem;
+    height: 29rem;
+  }
+}

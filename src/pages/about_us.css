@@ -1,0 +1,20 @@
+.Background{
+    --bg-image: url(../Utils/Assests/Price_1.jpg);
+    --bg-image-opacity: .9;
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+
+}
+
+.Background::after{
+    content: '';
+    opacity: var(--bg-image-opacity);
+    background-image: var(--bg-image);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+}

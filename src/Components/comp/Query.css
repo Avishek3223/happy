@@ -1,0 +1,89 @@
+/* 
+.query h1{
+    text-align: center;
+    font-size: 3rem;
+    
+}
+
+.query h2{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    margin: 5rem 18rem;
+    width: 60%;
+    padding: 2rem 1rem;
+    border-radius: 3rem;
+}
+
+.container hr{
+    margin-right: 70px;
+    margin-left: 10px;
+    width: 5px;
+    height: 65vh;
+    background-color: black;
+}
+
+#name{
+    margin-left: 0.9rem;
+    border: 2px solid #000;
+}
+
+#country{
+    border: 2px solid #000;
+}
+
+#address{
+    border: 2px solid #000;
+
+}
+
+#email{
+    margin-left: 0.8rem;
+    border: 2px solid #000;
+}
+
+#message{
+    border-radius: 1rem;
+    border: 2px solid #000;
+    padding: 0.4rem;
+}
+
+.lower p, .lower input{
+    margin:0.4rem 0;
+    border-radius: 0.9rem;
+    padding: 0.5rem;
+}
+
+.form-container h1{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.lower button{
+    margin: 1rem 5rem;
+    border: 0;
+    color: #fff;
+    background-color: #FDCF08;
+    border-radius: 1rem;
+    width: 10rem;
+    height: 3rem;
+}
+
+.lower button:hover{
+    background-color: #fff;
+    font-size: 1rem;
+    color: #FDCF08;
+    border: 2px solid #FDCF08;
+}
+
+.new-query img{
+    height: 40vh;
+    width: 25rem;
+    height: 35rem;
+} */
