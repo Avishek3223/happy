@@ -34,13 +34,13 @@ export default function Subscription() {
                 onClick={() => {
                   Navigate("/signup");
                 }}
-                className="w-[15rem] bg-[#FDCF08] text-white px-12 py-2 rounded-2xl hover:text-[#FDCF08] hover:bg-white hover:border-[#FDCF08] hover:border-[0.3rem] h-[3rem] flex justify-center items-center mt-1 max450:w-[60vw]"
+                className="w-[15rem] bg-[#1b7571] text-white px-12 py-2 rounded-2xl hover:text-[#FDCF08] hover:bg-white hover:border-[#1b7571] hover:border-[0.3rem] h-[3rem] flex justify-center items-center mt-1 max450:w-[60vw]"
               >
                 Subscribe
               </button>
             )}
           </div>
-          <div className="bg-white w-[24rem] h-[34rem] p-16 rounded-[2rem] RussoOne flex flex-col items-center gap-8 shadowSubscribe max450:text-[1rem] max450:min-h-[28rem] max450:h-auto max450:p-12  border-[#FDCF08] border-[0.1rem]">
+          <div className="bg-white w-[24rem] h-[34rem] p-16 rounded-[2rem] RussoOne flex flex-col items-center gap-8 shadowSubscribe max450:text-[1rem] max450:min-h-[28rem] max450:h-auto max450:p-12  border-[#1b7571] border-[0.1rem]">
             <p className="mb-8">BWORKZ Instructor Yearly</p>
             <p>Yearly Subscription Through PayPal</p>
             <h1 className="text-left w-[100%]">$ 200.00 / Yearly</h1>
@@ -51,7 +51,7 @@ export default function Subscription() {
                 onClick={() => {
                   Navigate("/signup");
                 }}
-                className="w-[15rem] bg-[#FDCF08] text-white px-12 py-2 rounded-2xl hover:text-[#FDCF08] hover:bg-white hover:border-[#FDCF08] hover:border-[0.3rem] h-[3rem] flex justify-center items-center mt-16  max450:w-[60vw]"
+                className="w-[15rem] bg-[#1b7571] text-white px-12 py-2 rounded-2xl hover:text-[#1b7571] hover:bg-white hover:border-[#1b7571] hover:border-[0.3rem] h-[3rem] flex justify-center items-center mt-16  max450:w-[60vw]"
               >
                 Subscribe
               </button>
