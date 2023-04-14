@@ -22,7 +22,7 @@ const NavBar = () => {
         location.pathname === "/dashboard" ? "max536:h-auto  max536:mt-16" : ""
       } `}
     >
-      <div className="flex z-20 fixed items-center justify-between  w-screen bg-[#1b7571]  h-[3.8rem] px-4 left-0 max536:bg-black">
+      <div className="flex z-20 fixed items-center justify-between  w-screen bg-[#1b7571]  h-[3.8rem] px-4 left-0 max536:bg-black max536:hidden">
       <a
       href="/"
       className={`logo bg-[#fff] w-[8rem] h-[2.4rem] rounded-xl flex items-center justify-center   ${
@@ -162,7 +162,7 @@ const NavBar = () => {
             <img
               src={CrossPng}
               alt=""
-              className={` fixed top-10 right-6 z-60 cursor-pointer h-8 bg-[#0DB3E8]`}
+              className={` fixed top-10 right-6 z-60 cursor-pointer h-8 bg-[#1b7571]`}
               onClick={() => {
                 setIsNavActive(!isNavActive);
               }}
@@ -187,7 +187,7 @@ const NavBar = () => {
           }`}
         ></div> */}
           {isNavActive && (
-            <div className="bg-[#0DB3E8] h-screen w-screen text-white RussoOne text-[1.8rem]">
+            <div className="bg-[#1b7571] h-screen w-screen text-white RussoOne text-[1.8rem]">
               <ul className="pt-24 flex flex-col items-start px-24 gap-8">
                 <li className="flex items-center justify-center  hover:text-[#225c59]">
                   <p
