@@ -25,7 +25,7 @@ const PreviousSessions = () => {
         alert("Invalid Details");
         UtilCtx.setLoader(false);
       } else {
-        await API.put("user", "/admin/edit-schedule-recording/Bworkz", {
+        await API.put("user", "/admin/edit-schedule-recording/happyprancer", {
           body: {
             classId: classId,
             recordingLink: recordingLink,
@@ -163,7 +163,7 @@ const PreviousSessions = () => {
           </table>
         </div>
       </div> */}
-      <h2 className=" text-[1.6rem] RussoOne font-thin  max536:text-[#FDCF08]">
+      <h2 className=" text-[1.6rem] RussoOne font-thin  max536:text-[#1b7571]">
         Previous Sessions
       </h2>
       {(Ctx.userData.userType === "admin" ||
@@ -179,14 +179,14 @@ const PreviousSessions = () => {
               }}
             />
             <button
-              className="RussoOne bg-[#EFC40B] rounded-lg py-2 w-[6rem]"
+              className="RussoOne bg-[#1b7571] rounded-lg py-2 w-[6rem]"
               onClick={onRecordingUpdate}
             >
               Update
             </button>
           </form>
         )}
-      <ul className="w-[90%] h-[calc(100vh-20rem)] flex flex-col bg-[#eceaeaa1] rounded-3xl items-center justify-start pt-6 max536:gap-3 max536:h-[calc(100vh-17rem)] max536:bg-gradient-to-b max536:from-[#dad7c6] max536:to-[#fdd00891]">
+      <ul className="w-[90%] h-[calc(100vh-20rem)] flex flex-col bg-[#eceaeaa1] rounded-3xl items-center justify-start pt-6 max536:gap-3 max536:h-[calc(100vh-17rem)] max536:bg-gradient-to-b max536:from-[#dad7c6] max536:to-[#1b7571]">
         <li
           className={`w-[96%] flex flex-col items-center justify-center p-2  max536:pt-5 max536:rounded-2xl`}
         >
@@ -233,7 +233,7 @@ const PreviousSessions = () => {
                       month: "short",
                     })}
                   </p>
-                  <div className="w-[7.3rem] mr-4   rounded px-2 bg-yellow-400 max-h-[1.8rem] self-center flex justify-center items-center max536:mr-0">
+                  <div className="w-[7.3rem] mr-4   rounded px-2 bg-[#1b7571] max-h-[1.8rem] self-center flex justify-center items-center max536:mr-0 text-white">
                     {clas.recordingLink ? (
                       <a href={clas.recordingLink} target={"_blank"}>
                         link
@@ -255,7 +255,7 @@ const PreviousSessions = () => {
                               </button>
                             ) : (
                               <button
-                                className="w-[3rem] px-2 py-1 rounded-md text-black RussoOne"
+                                className="w-[3rem] px-2 py-1 rounded-md RussoOne text-white"
                                 onClick={() => {
                                   setClassId(clas.classId);
                                   setRecordingLink(clas.recordingLink);

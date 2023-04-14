@@ -22,7 +22,7 @@ const Login = () => {
     try {
       await Auth.signIn(email, password);
 
-      const userdata = await API.get("user", "/user/profile/Bworkz");
+      const userdata = await API.get("user", "/user/profile/happyprancer");
       //Temporary
       // userdata.Status = true;
       UserCtx.setUserData(userdata);

@@ -13,7 +13,7 @@ const UsersList = () => {
   return (
     <div className="w-[100%] flex flex-col items-center pt-6 max536:pt-0 gap-10">
       <div
-        className={`w-[90%] bg-[#eceaeae1] max536:bg-transparent max536:w-[100%]
+        className={`w-[90%] bg-[#bde7e5] max536:bg-transparent max536:w-[100%]
         } rounded-3xl p-3 flex flex-col items-center max1050:w-[94vw]`}
       >
         {/* <div className=" mt-6 w-[96%]  flex items-start overflow-auto">
@@ -56,7 +56,7 @@ const UsersList = () => {
             </tbody>
             </table>
           </div> */}
-        <h2 className="pl-5 text-[1.4rem] max536:mb-3 max536:text-[1.7rem] RussoOne font-thin max536:text-[#FDCF08]">
+        <h2 className="pl-5 text-[1.4rem] max536:mb-3 max536:text-[1.7rem] RussoOne font-thin max536:text-[#1b7571]">
           Members List
         </h2>
         <ul className="w-[100%] h-[calc(100vh-14rem)] flex flex-col  max536:bg-[#eceaeaa1] rounded-3xl items-center justify-start pt-6 max536:gap-3 max536:h-[calc(100vh-16rem)] max536:bg-gradient-to-b max536:from-[#dad7c6] max536:to-[#fdd00891]">
@@ -111,7 +111,7 @@ const UsersList = () => {
                       {user.phoneNumber}
                     </p>
                     <p className="overflow-hidden w-[3.7rem]  ">9/10</p>
-                    <p className="w-[3.4rem] mr-4   rounded px-2 bg-yellow-400 max-h-[1.8rem] self-center flex justify-center items-center max536:mr-0">
+                    <p className="w-[3.4rem] mr-4   rounded px-2 bg-[] max-h-[1.8rem] self-center flex justify-center items-center max536:mr-0">
                       {/* {new Date(user.date).toLocaleDateString("en-us", {
                       day: "2-digit",
                       month: "2-digit",

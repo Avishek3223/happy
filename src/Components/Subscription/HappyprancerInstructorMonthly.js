@@ -3,7 +3,7 @@ import { API } from "aws-amplify";
 import { useNavigate } from "react-router";
 // import { useParams } from "react-router-dom";
 
-export default function BworkzInstructorMonthly() {
+export default function HappyprancerInstructorMonthly() {
   const paypal = useRef();
   const Navigate = useNavigate();
   // const history = useHistory()
@@ -33,7 +33,7 @@ export default function BworkzInstructorMonthly() {
           try {
             const addMonth = 30 * 24 * 60 * 60 * 1000;
 
-            const product = "BworkZ Instructor Monthly";
+            const product = "Happyprancer Instructor Monthly";
             const joiningDate = Date.now();
             const renewDate = Date.now() + addMonth;
             const paymentMethodEmailId = "---";
@@ -71,7 +71,7 @@ export default function BworkzInstructorMonthly() {
   }, []);
 
   const paypalData = async (postData) => {
-    return await API.put("user", `/user/payment-update/Bworkz`, {
+    return await API.put("user", `/user/payment-update/happyprancer`, {
       body: postData,
     });
   };

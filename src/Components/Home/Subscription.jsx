@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router";
 // import "../comp/Subscription.css";
-import BworkzInstructorMonthly from "../Subscription/BworkzInstructorMonthly";
-import BworkzInstructorYearly from "../Subscription/BworkzInstructorYearly";
+import BworkzInstructorMonthly from "../Subscription/HappyprancerInstructorMonthly";
+import BworkzInstructorYearly from "../Subscription/HappyprancerInstructorYearly";
 import Context from "../../Context/Context";
 
 export default function Subscription() {

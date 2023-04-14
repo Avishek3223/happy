@@ -34,7 +34,7 @@ const UpcomingSessions = () => {
         alert("Invalid Details");
         UtilCtx.setLoader(false);
       } else {
-        await API.put("user", "/admin/edit-schedule-name/Bworkz", {
+        await API.put("user", "/admin/edit-schedule-name/happyprancer", {
           body: {
             classId: classId,
             instructorNames: instructorName,
@@ -70,7 +70,7 @@ const UpcomingSessions = () => {
 
     UtilCtx.setLoader(true);
     try {
-      await API.post("user", "/admin/add-schedule/Bworkz", {
+      await API.post("user", "/admin/add-schedule/happyprancer", {
         body: {
           classType: classType,
           startTimeEst: new Date(date).getTime(),
@@ -95,7 +95,7 @@ const UpcomingSessions = () => {
     <div className="w-[100%] flex flex-col items-center pt-6 max536:p-0">
       {Ctx.userData.userType === "admin" ||
         Ctx.userData.userType === "instructor" || (
-          <div className="w-[90%] h-64 bg-[#eceaeaa1] rounded-[2.5rem] p-4 flex items-center justify-between max1050:px-2">
+          <div className="w-[90%] h-64 bg-[#c3f3f1] rounded-[2.5rem] p-4 flex items-center justify-between max1050:px-2">
             <div className="ml-20 max1050:ml-5">
               {Ctx.isAuth ? (
                 <h2 className="text-[2rem] max500:text-[1.4rem]">
@@ -194,7 +194,7 @@ const UpcomingSessions = () => {
             {/* </div> */}
           </div>
           <button
-            className="RussoOne bg-[#EFC40B] rounded-lg py-2 "
+            className="RussoOne bg-[#1b7571] rounded-lg py-2 text-[#fff]"
             onClick={onScheduleCreate}
           >
             Post
@@ -248,7 +248,7 @@ const UpcomingSessions = () => {
                       })}
                     </p>
                     <a
-                      className="px-2 bg-yellow-400 max-h-[1.8rem] self-center ml-1 "
+                      className="px-2 bg-[#1b7571] max-h-[1.8rem] self-center ml-1 text-white"
                       href={clas.zoomLink}
                       target={"_blank"}
                     >
@@ -276,7 +276,7 @@ const UpcomingSessions = () => {
                     Ctx.userData.userType === "instructor") ? (
                     <div className="flex w-[100%] justify-between mb-5 gap-4">
                       <input
-                        className="bg-[#ffffff79] text-[#0008] RussoOne px-4 py-1 rounded-lg w-[85%]"
+                        className="bg-[#1b7571] text-[#0008] RussoOne px-4 py-1 rounded-lg w-[85%]"
                         placeholder="Instructior Name"
                         value={instructorName}
                         onChange={(e) => {
@@ -284,7 +284,7 @@ const UpcomingSessions = () => {
                         }}
                       />
                       <button
-                        className="RussoOne bg-[#EFC40B] rounded-lg py-2 w-[6rem] px-1 max536:text-[0.8rem] max536:py-1"
+                        className="RussoOne bg-[#1b7571] rounded-lg py-2 w-[6rem] px-1 max536:text-[0.8rem] max536:py-1"
                         onClick={() => {
                           setEditingIndex(-1);
                           setIsEditing(false);
@@ -295,7 +295,7 @@ const UpcomingSessions = () => {
                         Cancel
                       </button>
                       <button
-                        className="RussoOne bg-[#EFC40B] rounded-lg py-2 w-[6rem] px-1 max536:text-[0.8rem] max536:py-1"
+                        className="RussoOne bg-[#1b7571] rounded-lg py-2 w-[6rem] px-1 max536:text-[0.8rem] max536:py-1"
                         onClick={onNameChange}
                       >
                         Change

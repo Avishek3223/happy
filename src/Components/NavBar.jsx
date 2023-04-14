@@ -22,7 +22,7 @@ const NavBar = () => {
         location.pathname === "/dashboard" ? "max536:h-auto  max536:mt-16" : ""
       } `}
     >
-      <div className="flex z-20 fixed items-center justify-between  w-screen bg-black  h-[3.8rem] px-4 left-0 max536:bg-black">
+      <div className="flex z-20 fixed items-center justify-between  w-screen bg-[#1b7571]  h-[3.8rem] px-4 left-0 max536:bg-black">
       <a
       href="/"
       className={`logo bg-[#fff] w-[8rem] h-[2.4rem] rounded-xl flex items-center justify-center   ${

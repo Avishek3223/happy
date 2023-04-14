@@ -35,7 +35,7 @@ const LeftBanner = ({ displayAfterClick }) => {
           <li
             className={`flex items-center text-[1.1rem] w-[86%] ${
               click === 0 &&
-              " bg-[#fdd0086b]  max1050:bg-[#FDCF08] max1050:rounded-[50%]"
+              " bg-[#1b7571]  max1050:bg-[#1b75718] max1050:rounded-[50%]"
             } my-3 p-2 font-bold text-white rounded-md cursor-pointer max1050:w-auto`}
             onClick={() => {
               setClick(0);
@@ -52,7 +52,7 @@ const LeftBanner = ({ displayAfterClick }) => {
           <li
             className={`flex items-center text-[1.1rem] w-[86%] my-3 p-2 font-bold text-white rounded-md  ${
               click === 1 &&
-              " bg-[#fdd0086b]  max1050:bg-[#FDCF08] max1050:rounded-[50%]"
+              " bg-[#1b7571]  max1050:bg-[#1b7571] max1050:rounded-[50%]"
             } cursor-pointer max1050:w-auto`}
             onClick={() => {
               setClick(1);
@@ -69,7 +69,7 @@ const LeftBanner = ({ displayAfterClick }) => {
           <li
             className={`flex items-center text-[1.1rem] w-[86%] my-3 p-2 font-bold text-white rounded-md  ${
               click === 2 &&
-              " bg-[#fdd0086b]  max1050:bg-[#FDCF08] max1050:rounded-[50%]"
+              " bg-[#1b7571]  max1050:bg-[#1b7571] max1050:rounded-[50%]"
             } cursor-pointer  max1050:w-auto`}
             onClick={() => {
               setClick(2);
@@ -86,7 +86,7 @@ const LeftBanner = ({ displayAfterClick }) => {
           <li
             className={`flex items-center text-[1.1rem] w-[86%] my-3 p-2 font-bold text-white rounded-md min1050:hidden ${
               click === 3 &&
-              " bg-[#fdd0086b] max1050:bg-[#FDCF08] max1050:rounded-[50%] max1050:"
+              " bg-[#1b7571] max1050:bg-[#1b7571] max1050:rounded-[50%] max1050:"
             } cursor-pointer max1050:w-auto`}
             onClick={() => {
               setClick(3);
@@ -104,7 +104,7 @@ const LeftBanner = ({ displayAfterClick }) => {
               <li
                 className={`flex items-center text-[1.1rem] w-[86%] my-3 p-2 font-bold text-white rounded-md  ${
                   click === 4 &&
-                  " bg-[#fdd0086b] max1050:bg-[#FDCF08] max1050:rounded-[50%] max1050:"
+                  " bg-[#1b7571] max1050:bg-[#1b7571] max1050:rounded-[50%] max1050:"
                 } cursor-pointer max1050:w-auto`}
                 onClick={() => {
                   setClick(4);

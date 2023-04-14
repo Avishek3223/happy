@@ -72,7 +72,7 @@ const Footer = (props) => {
               <hr className="w-[100%] text-white " />
               <a
                 className="cursor-pointer"
-                href="https://s3-us-east-2.amazonaws.com/bworkzdocuments/brochure.pdf"
+                href="https://s3-us-east-2.amazonaws.com/happyprancerdocuments/brochure.pdf"
                 target={"_blank"}
               >
                 Instructor Brochure
@@ -186,7 +186,7 @@ const Footer = (props) => {
         <div className="py-[0.4rem] px-8 h-16 bg-[#225c59]">
           <div className="flex bg-black justify-between items-center w-[15%] min-w-[10rem] max-w-[12rem] rounded-2xl h-12 p-4">
             <a
-              href="https://instagram.com/bworkz_workout?igshid=YmMyMTA2M2Y"
+              href="https://instagram.com/happyprancer_workout?igshid=YmMyMTA2M2Y"
               target={"_blank"}
             >
               <img
@@ -196,7 +196,7 @@ const Footer = (props) => {
               />
             </a>
             <a
-              href="https://www.facebook.com/BworkZLive?mibextid=LQQJ4d"
+              href="https://www.facebook.com/happyprancerLive?mibextid=LQQJ4d"
               target={"_blank"}
             >
               <img

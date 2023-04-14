@@ -53,7 +53,7 @@ const ProfileUpdate = () => {
     if (validate()) {
       if (phoneNumber && phoneNumber.length >= 10) {
         try {
-          const userdata = await API.put("user", "/user/profile/Bworkz", {
+          const userdata = await API.put("user", "/user/profile/happyprancer", {
             body: {
               emailId: UserCtx.emailId,
               userName: name,
@@ -139,7 +139,7 @@ const ProfileUpdate = () => {
       try {
         await Auth.verifyCurrentUserAttributeSubmit("email", emailCode);
 
-        const userdata = await API.put("user", "/user/profile/Bworkz", {
+        const userdata = await API.put("user", "/user/profile/happyprancer", {
           body: {
             emailId: email,
             userName: UserCtx.userName,
@@ -217,7 +217,7 @@ const ProfileUpdate = () => {
                   </button>
                   <div className="flex justify-center">
                     <button
-                      className="RussoOne bg-[#EFC40B] rounded-lg w-[8rem] text-white py-2 "
+                      className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 "
                       onClick={onProfileUpdate}
                     >
                       Confirm
@@ -283,7 +283,7 @@ const ProfileUpdate = () => {
                   )}
                   <button
                     onClick={onPasswordChange}
-                    className="RussoOne bg-[#EFC40B] rounded-lg w-[8rem] text-white py-2 mt-8 "
+                    className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
                   >
                     Change
                   </button>
@@ -314,7 +314,7 @@ const ProfileUpdate = () => {
                   )}
                   <button
                     onClick={onEmailChange}
-                    className="RussoOne bg-[#EFC40B] rounded-lg w-[8rem] text-white py-2 mt-8 "
+                    className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
                   >
                     Send Code
                   </button>

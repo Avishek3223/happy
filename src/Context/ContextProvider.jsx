@@ -13,7 +13,7 @@ const ContextProvider = (props) => {
   useEffect(() => {
     if (isAuth) {
       const onLoad = () => {
-        API.get("user", "/user/upcoming-schedule/Bworkz")
+        API.get("user", "/user/upcoming-schedule/happyprancer")
           .then((classes) => {
             setUpcomingClasses(classes);
           })
@@ -21,7 +21,7 @@ const ContextProvider = (props) => {
             setUpcomingClasses([]);
             console.log(e);
           });
-        API.get("user", "/user/previous-schedule/Bworkz")
+        API.get("user", "/user/previous-schedule/happyprancer")
           .then((classes) => {
             setPreviousClasses(classes);
           })
@@ -29,7 +29,7 @@ const ContextProvider = (props) => {
             setPreviousClasses([]);
             console.log(e);
           });
-        API.get("user", "/admin/profile-list/Bworkz")
+        API.get("user", "/admin/profile-list/happyprancer")
           .then((list) => {
             setUserList(list);
           })
