@@ -17,14 +17,14 @@ const Header = () => {
       fingertips <span className="text-[#225c59]">Fitness</span>
       </h3>
       </div>
-        <p
+        {/* <p
           className="text-white text-[1.5rem] h-[2rem] border-[2px] font-Russo border-white flex justify-center items-center rounded-3xl mt-8 px-14 py-6 hover:bg-[#225c59] hover:border-[#225c59] max800:py-2 max800:px-6 max800:mt-4 max800:text-[1rem] max800:rounded-md"
           onClick={() => {
             Navigate("/subscription");
           }}
         >
           Enroll Now
-        </p>
+        </p> */}
       </div>
       <div className="-z-10">
         <video

@@ -39,9 +39,9 @@ const DashBoard = () => {
   // };
 
   return (
-    <div className="flex flex-col items-center w-screen min-h-screen bg-gradient-to-b min536:from-[#cecece] max536:from-[#000000] min536:via-[#d3d0b7] max536:via-[#fdd00842] max536:to-[#FFF] min536:to-[#fdd0085b]">
+    <div className="flex flex-col items-center w-screen min-h-screen overflow-auto ">
       <NavBar />
-      <div className="w-[calc(100vw-1rem)] ml-4 rounded-3xl flex max1050:w-screen max1050:ml-0 h-screen max536:rounded-none max536:mt-10 ">
+      <div className="w-[calc(100vw-1rem)] ml-4 rounded-3xl flex max1050:w-screen max1050:ml-0  max536:rounded-none max536:mt-10 ">
         <LeftBanner
           displayAfterClick={(data) => {
             setClick(data);

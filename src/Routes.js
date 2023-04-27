@@ -11,6 +11,7 @@ import Subscription from "./pages/Subscription";
 import ForgotPassword from "./pages/ForgotPassword";
 import PaymentFailed from "./pages/PaymentFailed";
 import PaymentSuccessful from "./pages/PaymentSuccessful";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const RoutesContainer = () => {
   return (
@@ -27,6 +28,7 @@ const RoutesContainer = () => {
       <Route path="/forgotpassword" element={<ForgotPassword />} />
       <Route path="/paymentsuccessful" element={<PaymentSuccessful />} />
       <Route path="/paymentfailed" element={<PaymentFailed />} />
+      <Route path="/privacypolicy" element={<PrivacyPolicy />} />
     </Routes>
   );
 };

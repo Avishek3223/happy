@@ -197,7 +197,7 @@ const SignUp = () => {
         </ul>
         {err && <p className="text-[0.8rem] mt-2 text-red-500">{err}</p>}
         <button
-          className={`p-4 py-1 mt-6 mb-3 bg-yellow-400 rounded-lg`}
+          className={`p-4 py-1 mt-6 mb-3 bg-[#225c59] text-white rounded-lg`}
           onClick={onSubmit}
         >
           Sign Up
@@ -224,7 +224,7 @@ const SignUp = () => {
         </ul>
         {err && <p className="text-[0.8rem] mt-2 text-red-500">{err}</p>}
         <button
-          className="p-4 py-1 mt-6 mb-3 bg-yellow-400 rounded-lg"
+          className="p-4 py-1 mt-6 mb-3 bg-[#225c59] rounded-lg"
           onClick={onConfirmationSubmit}
         >
           Confirm code

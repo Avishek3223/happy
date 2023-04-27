@@ -186,7 +186,7 @@ const PreviousSessions = () => {
             </button>
           </form>
         )}
-      <ul className="w-[90%] h-[calc(100vh-20rem)] flex flex-col bg-[#eceaeaa1] rounded-3xl items-center justify-start pt-6 max536:gap-3 max536:h-[calc(100vh-17rem)] max536:bg-gradient-to-b max536:from-[#dad7c6] max536:to-[#1b7571]">
+      <ul className="w-[90%] h-[calc(100vh-10rem)] flex flex-col bg-[#e1faf9] rounded-3xl items-center justify-start pt-6 max536:gap-3 max536:h-[calc(100vh-17rem)] max536:bg-gradient-to-b max536:from-[#dad7c6] max536:to-[#1b7571]">
         <li
           className={`w-[96%] flex flex-col items-center justify-center p-2  max536:pt-5 max536:rounded-2xl`}
         >

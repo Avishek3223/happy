@@ -2,9 +2,8 @@ import logo from "../../Utils/Happy/images/logo.png";
 import facebook from "../../Utils/Assests/FB.png";
 import instagram from "../../Utils/Assests/INSTA.png";
 import youtube from "../../Utils/Assests/YOU.png";
-import { useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
-
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 const Footer = (props) => {
   const Navigate = useNavigate();
@@ -34,8 +33,8 @@ const Footer = (props) => {
               <hr className="w-[100%] text-white " />
               <p
                 className="cursor-pointer"
-                value={content} onChange={handleContentChange}
-
+                value={content}
+                onChange={handleContentChange}
                 onClick={() => {
                   Navigate("/aboutus");
                 }}
@@ -58,16 +57,16 @@ const Footer = (props) => {
               >
                 Instructor
               </p>
-              <a
+              {/* <a
                 className="cursor-pointer"
                 href="https://youtube.com/@bworkzworkout2004"
                 target={"_blank"}
               >
                 Youtube
-              </a>
+              </a> */}
             </li>
 
-            <li className="RussoOne flex flex-col gap-4 items-center text-center">
+            {/* <li className="RussoOne flex flex-col gap-4 items-center text-center">
               <h2>Useful Links</h2>
               <hr className="w-[100%] text-white " />
               <a
@@ -99,7 +98,7 @@ const Footer = (props) => {
               >
                 ACE
               </a>
-              {/* <p
+              <p
                 className="cursor-pointer"
                 onClick={() => {
                   Navigate("/");
@@ -130,8 +129,8 @@ const Footer = (props) => {
                 }}
               >
                 Gym classes
-              </p> */}
-            </li>
+              </p>
+            </li> */}
 
             <li className="RussoOne flex flex-col gap-4 items-center text-center">
               <h2>Affiliated Gyms</h2>
@@ -176,7 +175,11 @@ const Footer = (props) => {
               >
                 Community Support
               </p> */}
-              <a className="cursor-pointer" href="https://happyprancer.com/" target={"_blank"}>
+              <a
+                className="cursor-pointer"
+                href="https://happyprancer.com/"
+                target={"_blank"}
+              >
                 HappyPrancer
               </a>
             </li>
@@ -184,7 +187,7 @@ const Footer = (props) => {
         </div>
 
         <div className="py-[0.4rem] px-8 h-16 bg-[#225c59]">
-          <div className="flex bg-black justify-between items-center w-[15%] min-w-[10rem] max-w-[12rem] rounded-2xl h-12 p-4">
+          {/* <div className="flex bg-black justify-between items-center w-[15%] min-w-[10rem] max-w-[12rem] rounded-2xl h-12 p-4">
             <a
               href="https://instagram.com/happyprancer_workout?igshid=YmMyMTA2M2Y"
               target={"_blank"}
@@ -212,11 +215,11 @@ const Footer = (props) => {
                 className="hover:mr-1 hover:w-10 hover:h-10 w-8 h-8"
               />
             </a>
-          </div>
+          </div> */}
         </div>
 
         <div className="RussoOne p-4 flex justify-center text-white gap-2">
-          <h4> Privacy Policy</h4>
+          <Link to={"/privacypolicy"}> Privacy Policy</Link>
           <div className="bg-[#225c59] w-1 border-white rounded-md"></div>
           <h5>&copy; All Rights are Reserved By BWORKZ</h5>
         </div>

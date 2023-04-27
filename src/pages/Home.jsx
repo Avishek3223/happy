@@ -10,6 +10,7 @@ import React from "react";
 import NavBar from "../Components/NavBar";
 import Header from "../Components/Home/Header";
 import Header2 from "../Components/Home/Header2";
+import Header3 from "../Components/Home/Header3";
 import Testimonial from "../Components/Home/Testimonial";
 import FAQ from "../Components/Home/FAQ";
 import Footer from "../Components/Home/Footer";
@@ -29,7 +30,9 @@ function Home() {
 
       <Header />
 
-      <Header2 />
+      {/* <Header2 /> */}
+
+      <Header3/>
 
       <Testimonial />
 

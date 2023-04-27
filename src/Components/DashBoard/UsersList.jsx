@@ -13,7 +13,7 @@ const UsersList = () => {
   return (
     <div className="w-[100%] flex flex-col items-center pt-6 max536:pt-0 gap-10">
       <div
-        className={`w-[90%] bg-[#bde7e5] max536:bg-transparent max536:w-[100%]
+        className={`w-[90%] bg-[#e1faf9] max536:bg-transparent max536:w-[100%]
         } rounded-3xl p-3 flex flex-col items-center max1050:w-[94vw]`}
       >
         {/* <div className=" mt-6 w-[96%]  flex items-start overflow-auto">
@@ -59,7 +59,7 @@ const UsersList = () => {
         <h2 className="pl-5 text-[1.4rem] max536:mb-3 max536:text-[1.7rem] RussoOne font-thin max536:text-[#1b7571]">
           Members List
         </h2>
-        <ul className="w-[100%] h-[calc(100vh-14rem)] flex flex-col  max536:bg-[#eceaeaa1] rounded-3xl items-center justify-start pt-6 max536:gap-3 max536:h-[calc(100vh-16rem)] max536:bg-gradient-to-b max536:from-[#dad7c6] max536:to-[#fdd00891]">
+        <ul className="w-[100%] h-[calc(100vh-10rem)] flex flex-col  max536:bg-[#eceaeaa1] rounded-3xl items-center justify-start pt-6 max536:gap-3 max536:h-[calc(100vh-16rem)] max536:bg-gradient-to-b max536:from-[#dad7c6] max536:to-[#fdd00891]">
           <li
             className={`w-[100%] flex flex-col items-center justify-center p-2  max536:pt-5 max536:rounded-2xl`}
           >

@@ -211,8 +211,24 @@ const UpcomingSessions = () => {
               (Ctx.userData.userType === "admin" ||
                 Ctx.userData.userType === "instructor") &&
               "h-[40rem]"
-            }  flex flex-col overflow-auto bg-[#eceaeaa1] max536:bg-transparent rounded-2xl items-center justify-start pt-6 max536:gap-3 `}
+            }  flex flex-col overflow-auto bg-[#e1faf9] max536:bg-transparent rounded-2xl items-center justify-start pt-6 max536:gap-3 `}
           >
+            <li
+              className={`w-[100%] flex flex-col items-center justify-center p-2 max536:pt-5 max536:rounded-2xl`}
+            >
+              <div className="flex w-[85%] max1050:w-[96%] justify-between max1050:justify-between mb-5 relative pr-8 ">
+                <p className="overflow-hidden w-[3.6rem] ">Date</p>
+                <p className="w-[7rem] max536:hidden ">Instructor</p>
+                <p className="w-[40%] text-left overflow-hidden  max536:hidden">
+                  Description
+                </p>
+                <p className=" ">Time</p>
+                <p className="px-2 text-black max-h-[1.8rem] self-center ml-1">
+                  Zoom Link
+                </p>
+              </div>
+            </li>
+
             {Ctx.upcomingClasses.map((clas, i) => {
               // console.log(clas.instructorNames);
 

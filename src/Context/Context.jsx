@@ -5,6 +5,8 @@ const Context = createContext({
   setIsAuth: () => {},
   userData: "",
   setUserData: () => {},
+  isUserDataLoaded: false,
+  setIsUserDataLoaded: () => {},
   util: {
     loader: false,
     setLoader: () => {},
@@ -15,6 +17,9 @@ const Context = createContext({
   setPreviousClasses: () => {},
   userList: [],
   setUserList: () => {},
+  productList: [],
+  setProductList: () => {},
+  reloadClasses: () => {},
 });
 
 export default Context;
