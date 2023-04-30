@@ -3,8 +3,7 @@ import { useNavigate } from "react-router";
 import "../Components/comp/Subscription.css";
 import Footer from "../Components/Home/Footer";
 import NavBar from "../Components/NavBar";
-import HappyprancerInstructorMonthly from "../Components/Subscription/HappyprancerInstructorMonthly";
-import HappyprancerInstructorYearly from "../Components/Subscription/HappyprancerInstructorYearly";
+import HappyprancerInstructorMonthly from "../Components/Subscription/HappyprancerPaypalMonthly";
 import Context from "../Context/Context";
 
 export default function Subscription() {
@@ -45,7 +44,7 @@ export default function Subscription() {
             <p>Yearly Subscription Through PayPal</p>
             <h1 className="text-left w-[100%]">$ 200.00 / Yearly</h1>
             {Ctx.isAuth ? (
-              <HappyprancerInstructorYearly />
+              <HappyprancerInstructorMonthly />
             ) : (
               <button
                 onClick={() => {
