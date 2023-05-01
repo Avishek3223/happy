@@ -19,17 +19,17 @@ const Footer = (props) => {
 
   return (
     <div>
-      <div className="bg-black">
+      <div className="bg-black ">
         <div className="flex flex-wrap justify-between p-12 gap-6 max1008:justify-center ">
           <div className="mb-5">
             <a href="/" className="transition duration-200">
-              <img className="w-[15rem]" src={logo} alt="" />
+              <img className="w-[15rem]" src={logo} alt="" />                                     {/* Logo  */}
             </a>
           </div>
 
-          <ul className=" flex gap-32 max950:gap-16 text-white flex-wrap max1050:justify-center ">
+          <ul className=" flex gap-32 max950:gap-16 text-white flex-wrap max1050:justify-center ">           {/* Quick Links  */}
             <li className="RussoOne flex flex-col gap-4 items-center text-cente ">
-              <h2 className="">About Us</h2>
+              <h2 className="">About Us</h2>                    
               <hr className="w-[100%] text-white " />
               <p
                 className="cursor-pointer"
@@ -186,8 +186,8 @@ const Footer = (props) => {
           </ul>
         </div>
 
-        <div className="py-[0.4rem] px-8 h-16 bg-[#225c59]">
-          {/* <div className="flex bg-black justify-between items-center w-[15%] min-w-[10rem] max-w-[12rem] rounded-2xl h-12 p-4">
+        <div className="py-[0.4rem] px-8 h-16 bg-[#225c59]">                                                                            {/* Social media Links  */}
+           <div className="flex bg-black justify-between items-center w-[15%] min-w-[10rem] max-w-[12rem] rounded-2xl h-12 p-4">
             <a
               href="https://instagram.com/happyprancer_workout?igshid=YmMyMTA2M2Y"
               target={"_blank"}
@@ -208,20 +208,24 @@ const Footer = (props) => {
                 className="hover:mr-2 hover:w-10 hover:h-10 w-8 h-8"
               />
             </a>
-            <a href="https://youtube.com/@bworkzworkout2004" target={"_blank"}>
+            <a href="/" target={"_blank"}>
               <img
                 src={youtube}
                 alt=""
                 className="hover:mr-1 hover:w-10 hover:h-10 w-8 h-8"
               />
             </a>
-          </div> */}
+          </div> 
         </div>
 
-        <div className="RussoOne p-4 flex justify-center text-white gap-2">
+        <div className=" p-4 flex justify-center text-white gap-2 font-poppins max406:flex-col max406:text-center ">        {/*      Policy Links      */}
           <Link to={"/privacypolicy"}> Privacy Policy</Link>
           <div className="bg-[#225c59] w-1 border-white rounded-md"></div>
-          <h5>&copy; All Rights are Reserved By BWORKZ</h5>
+          <Link to={"/terms"}> Terms and Condition </Link>
+          <div className="bg-[#225c59] w-1 border-white rounded-md"></div>
+          <Link to={"/terms"}>  Cancellation/Refund Policy </Link>
+          <div className="bg-[#225c59] w-1 border-white rounded-md"></div>
+          <h5>&copy; All Rights are Reserved By HAPPY PRANCER</h5>
         </div>
       </div>
     </div>

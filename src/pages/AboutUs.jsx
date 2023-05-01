@@ -6,11 +6,11 @@ import Footer from "../Components/Home/Footer";
 const AboutUs = () => {
   return (
     <>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center ">
         <NavBar />
-        <div className=" text-black flex flex-col items-center w-100 h-100 mt-[2rem] p-0 overflow-x-hidden w-[90vw] max-w-[80rem]">
-          <h1 className="RussoOne text-[4rem] text-center mt-10">About Us</h1>
-          <p className="mt-16">
+        <div className=" text-black flex flex-col items-center w-100 mt-[2rem] p-0 overflow-x-hidden w-[90vw] max-w-[80rem]">
+          <h1 className="RussoOne text-[4rem] text-center mt-9">About Us</h1>
+          <p className="mt-8">
             Welcome to HappyPrancer.com, the ultimate destination for dance
             fitness enthusiasts. Our website offers a wide range of online dance
             fitness resources, including Zumba classes that use mostly Latin
@@ -21,7 +21,7 @@ const AboutUs = () => {
             exercise into his daily routine until he discovered the joy of Zumba
             dance.
           </p>
-          <p className="mt-16">
+          <p className="mt-5">
             Zumba proved to be an enjoyable and engaging fitness routine for PK,
             which not only helped him stay fit but also provided an opportunity
             to make friends and have fun with dance and music. This positive
@@ -29,7 +29,7 @@ const AboutUs = () => {
             everyone he knew in the US via Zoom when the pandemic hit and all
             fitness clubs were forced to close.
           </p>
-          <p className="mt-16">
+          <p className="mt-5">
             At HappyPrancer.com, we believe that fitness can be fun and
             enjoyable, and we are committed to helping people lead healthier,
             happier lives, especially during these challenging times. Our
@@ -38,7 +38,7 @@ const AboutUs = () => {
             understand that fitness is not just about physical health, but also
             about mental and emotional well-being.
           </p>
-          <p className="mt-16 mb-20">
+          <p className="mt-6 mb-20">
             Our team of passionate individuals is dedicated to spreading
             happiness and promoting a positive outlook on life. We believe that
             everyone deserves to feel good about themselves and that everyone

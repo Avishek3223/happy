@@ -1,9 +1,8 @@
 import React from "react";
 import Faq from "react-faq-component";
-import Container from "react-bootstrap/esm/Container";
 import "./FAQ.css";
 
-const data = {
+const data = {                                               
   rows: [
     {
       title: "What is Happyprancer?",
@@ -43,7 +42,7 @@ const config = {
 
 export default function FAQ() {
   return (
-    <div className="home-faq flex flex-col  items-center justify-center gap-[5rem] max800:py-[20rem]">
+    <div className="home-faq flex flex-col w-full  items-center justify-center gap-[5rem] max800:py-[20rem]">
       <div className="home-faq">
         <div className="head">
           <div className="head-text flex items-center justify-center">

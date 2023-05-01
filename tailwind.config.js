@@ -26,7 +26,10 @@ module.exports = {
         max536: { max: "536px" },
         xs: "1000px",
       },
+      fontFamily: {
+        roboto: "Roboto",
     },
+   },
   },
   plugins: [require("@tailwindcss/container-queries")],
 };

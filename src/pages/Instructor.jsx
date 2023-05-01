@@ -10,9 +10,9 @@ import Footer from "../Components/Home/Footer";
 const Instructor = () => {
   return (
     <div>
-      <div className="flex flex-col items-center ">
+      <div className="flex flex-col items-center  h-full">
         <NavBar />
-        <div className="flex-col items-center mt-[3rem]">
+        <div className="flex-col items-center pt-[3rem] ">
           {/* <a href="https://forms.gle/C8WFVgrQmC9kzQhb6">
             <div className="instructor-headline ">Join us as an Instructor</div>
           </a> */}
@@ -28,8 +28,9 @@ const Instructor = () => {
               >
                 <div className="overlay"></div>
                 <div className="instructor-card-text flex flex-col items-center">
-                  <h4 className="text-[1.3rem] font-semibold">Anupam</h4>
-                  <h6>BWORKZ Master Instructor</h6>
+                
+                    <h4 className="text-[1.3rem] font-semibold">Prajakta</h4>
+                  <h6> Master Instructor</h6>
                 </div>
               </Card>
             </div>
@@ -45,7 +46,7 @@ const Instructor = () => {
                 <div className="overlay"></div>
                 <div className="instructor-card-text flex flex-col items-center">
                   <h4 className="text-[1.3rem] font-semibold">Auroshikha</h4>
-                  <h6>BWORKZ Pro Instructor</h6>
+                  <h6> Master Instructor</h6>
                 </div>
               </Card>
             </div>
@@ -61,7 +62,7 @@ const Instructor = () => {
                 <div className="overlay"></div>
                 <div className="instructor-card-text flex flex-col items-center">
                   <h4 className="text-[1.3rem] font-semibold">Roma</h4>
-                  <h6>BWORKZ Pro Instructor</h6>
+                  <h6> Master Instructor</h6>
                 </div>
               </Card>
             </div>

@@ -1,5 +1,5 @@
 .home-faq {
-  padding: 12rem;
+  padding: 4rem 10rem;
 }
 
 .row-title-text {
@@ -11,6 +11,23 @@
 
 .row-content-text {
   margin: 10px 0;
+}
+
+.text{
+  font-size: 2rem;
+}
+
+.head{
+  margin-bottom: 2rem;
+}
+
+.head-text{
+  font-size: 1.2rem;
+  color: #999;
+}
+.head-text1{
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 @media (max-width: 844px) {

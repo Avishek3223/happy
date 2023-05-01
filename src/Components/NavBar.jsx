@@ -17,75 +17,82 @@ const NavBar = () => {
   const location = useLocation();
 
   return (
-    <div
-      className={`   h-8  ${
-        location.pathname === "/dashboard" ? "max536:h-auto  max536:mt-16" : ""
+    <div                                       
+      className={`   h-8 z-50 ${
+        location.pathname === "/dashboard" ? "max536:h-[5rem]  max536:mt-0" : ""
       } `}
     >
-      <div className="flex z-20 fixed items-center justify-between  w-screen bg-[#1b7571]  h-[3.8rem] px-4 left-0 max536:bg-black max536:hidden">
+      <div className=" flex z-30 fixed items-center justify-between text-white w-screen bg-black border-b border-[#1b7571]  h-[3.8rem] px-10 left-0 max536:bg-black">
       <a
       href="/"
-      className={`logo bg-[#fff] w-[8rem] h-[2.4rem] rounded-xl flex items-center justify-center   ${
+      className={`logo bg-[#fff] w-[8rem] h-[2.4rem] rounded-xl flex items-center justify-center  ${
         location.pathname === "/dashboard" ? "max536:hidden" : ""
       }`}
     >
-      <img className="w-[5rem]  " src={logo} alt="" />
+    <img
+    className="relative rounded-301xl w-full p-1 h-[2rem] shrink-0 object-contain"
+    alt=""
+    src={logo}
+  />
     </a>
-        <ul className="flex gap-6 max800:hidden text-white  ">
-          <li className="flex items-center justify-center  hover:text-[#225c59] ">
-            <p
-              className="cursor-pointer"
-              onClick={() => {
-                Navigate("/");
-              }}
-            >
-              HOME
-            </p>
-          </li>
-          <li className="flex items-center justify-center cursor-pointer hover:text-[#225c59]">
-            <p
-              className="cursor-pointer"
-              onClick={() => {
-                Navigate("/aboutus");
-              }}
-            >
-              ABOUT US
-            </p>
-          </li>
-         
-          <li className="flex items-center justify-center h-10 cursor-pointer hover:text-[#225c59] ">
-            <p
-              className="cursor-pointer"
-              onClick={() => {
-                Navigate("/instructor");
-              }}
-            >
-              INSTRUCTOR
-            </p>
-          </li>
-        </ul>
-        <a className="max800:hidden flex items-center justify-center p-0 m-0">
-          {UserCtx.isAuth ? (
-            <p
-              onClick={() => {
-                Navigate("/dashboard");
-              }}
-              className="cursor-pointer text-white max800:hidden w-[10rem] text-center mr-10  p-2 py-1 border-solid border-2 border-[#225c59] rounded-md "
-            >
-              {UserCtx.userData.userName}
-            </p>
-          ) : (
-            <button
-              className="max800:hidden ml-[6rem] p-2 py-1 bg-[#225c59] rounded-md text-white"
-              onClick={() => {
-                Navigate("/login");
-              }}
-            >
-              Login
-            </button>
+                                                                                          {/*      Main Top Nav Bar           */}
+      <ul className="flex gap-6  max800:hidden font-poppins  ">
+      <li className="flex items-center justify-center  hover:text-[#1b7571] ">
+        <p
+          className="cursor-pointer"
+          onClick={() => {
+            Navigate("/");
+          }}
+        >
+          HOME
+        </p>
+      </li>
+      <li className="flex items-center justify-center cursor-pointer hover:text-[#1b7571]">
+        <p
+          className="cursor-pointer"
+          onClick={() => {
+            Navigate("/aboutus");
+          }}
+        >
+          ABOUT US
+        </p>
+      </li>
+     
+      <li className="flex items-center justify-center  cursor-pointer hover:text-[#1b7571] ">
+        <p
+          className="cursor-pointer"
+          onClick={() => {
+            Navigate("/instructor");
+          }}
+        >
+          INSTRUCTOR
+        </p>
+      </li>
+      <a className="max800:hidden flex items-center justify-center p-0 m-0">
+        {UserCtx.isAuth ? (
+          <p
+            onClick={() => {
+              Navigate("/dashboard");
+            }}
+            className="cursor-pointer  max800:hidden w-[10rem] text-center mr-10  p-2 py-1 border-solid border-2 border-[#1b7571] rounded-md "
+          >
+            {UserCtx.userData.userName}
+          </p>
+        ) : (
+          <button
+            className="max800:hidden  p-2 py-1 bg-[#1b7571] w-[6.5rem] h-[2.63rem] rounded-md text-white font-russo"
+            onClick={() => {
+              Navigate("/login");
+            }}
+          >
+            Login
+          </button>
+      
+        )}
+      </a>
+    </ul>
+                                                                                    {/*      Second NavBar           */}
         
-          )}
-        </a>
         <div
           className={`relative min800:hidden max800:block w-[auto] ${
             location.pathname === "/dashboard" ? "max536:hidden" : ""
@@ -96,10 +103,10 @@ const NavBar = () => {
         >
           <AiOutlineMenu color={"white"} />
           {isNavActive && (
-            <ul className="bg-white shadow-lg w-[10rem] absolute top-[1.6rem] right-0 z-40">
+            <ul className="bg-black shadow-lg w-[10rem] absolute top-[1.6rem] right-0 z-40">
               <li className="flex items-center justify-center h-10   ">
                 <p
-                  className="cursor-pointer hover:bg-[#225c59] "
+                  className="cursor-pointer hover:bg-[#1b7571] "
                   onClick={() => {
                     Navigate("/");
                   }}
@@ -107,7 +114,7 @@ const NavBar = () => {
                   Home
                 </p>
               </li>
-              <li className="flex items-center justify-center h-10  hover:bg-[#225c59]">
+              <li className="flex items-center justify-center h-10  hover:bg-[#1b7571]">
                 <p
                   className="cursor-pointer"
                   onClick={() => {
@@ -118,7 +125,7 @@ const NavBar = () => {
                 </p>
               </li>
               
-              <li className="flex items-center justify-center h-10  hover:bg-[#225c59]">
+              <li className="flex items-center justify-center h-10  hover:bg-[#1b7571]">
                 <p
                   className="cursor-pointer"
                   onClick={() => {
@@ -130,7 +137,7 @@ const NavBar = () => {
               </li>
               {UserCtx.isAuth ? (
                 <li
-                  className="flex items-center justify-center h-10  hover:bg-[#225c59] "
+                  className="flex items-center justify-center h-10  hover:bg-[#1b7571] "
                   onClick={() => {
                     Navigate("/dashboard");
                   }}
@@ -139,7 +146,7 @@ const NavBar = () => {
                 </li>
               ) : (
                 <li
-                  className="flex items-center justify-center h-10  hover:bg-[#225c59] "
+                  className="flex items-center justify-center h-10  hover:bg-[#1b7571] "
                   onClick={() => {
                     Navigate("/login");
                   }}
@@ -150,6 +157,8 @@ const NavBar = () => {
             </ul>
           )}
         </div>
+
+                                                                                        {/*       Mobile Navbar        */}
         <div
           className={`min536:hidden max536:fixed top-0 left-0 z-40 bg-black`}
         >
@@ -173,9 +182,9 @@ const NavBar = () => {
               alt=""
               className={`${
                 location.pathname !== "/dashboard"
-                  ? "max536:hidden max536:bg-black"
+                  ? "max536:hidden max536:bg-white"
                   : ""
-              } fixed top-10 right-6 z-60 cursor-pointer h-8 bg-black `}
+              } fixed top-4 right-6 z-60 cursor-pointer h-8 bg-transparent   `}
               onClick={() => {
                 setIsNavActive(!isNavActive);
               }}
@@ -189,17 +198,17 @@ const NavBar = () => {
           {isNavActive && (
             <div className="bg-[#1b7571] h-screen w-screen text-white RussoOne text-[1.8rem]">
               <ul className="pt-24 flex flex-col items-start px-24 gap-8">
-                <li className="flex items-center justify-center  hover:text-[#225c59]">
+                <li className="flex items-center justify-center  hover:text-[#1b7571]">
                   <p
                     className="cursor-pointer"
                     onClick={() => {
                       Navigate("/");
                     }}
                   >
-                    HOME
+                    Home
                   </p>
                 </li>
-                <li className="flex items-center justify-center   hover:text-[#225c59]">
+                <li className="flex items-center justify-center   hover:text-[#1b7571]">
                   <p
                     className="cursor-pointer"
                     onClick={() => {
@@ -210,7 +219,7 @@ const NavBar = () => {
                   </p>
                 </li>
                 
-                <li className="flex items-center justify-center   hover:text-[#225c59]">
+                <li className="flex items-center justify-center   hover:text-[#1b7571]">
                   <p
                     className="cursor-pointer"
                     onClick={() => {
@@ -222,7 +231,7 @@ const NavBar = () => {
                 </li>
                 {UserCtx.isAuth ? (
                   <li
-                    className="flex items-center justify-center h-10 cursor-pointer hover:bg-[#225c59]"
+                    className="flex items-center justify-center h-10 cursor-pointer mt-[4rem] border-b border-white hover:bg-[#1b7571]"
                     onClick={() => {
                       Navigate("/dashboard");
                     }}
@@ -231,7 +240,7 @@ const NavBar = () => {
                   </li>
                 ) : (
                   <li
-                    className="flex items-center justify-center cursor-pointer text-white hover:bg-[#225c59]"
+                    className="flex items-center justify-center cursor-pointer text-white hover:bg-[#1b7571]"
                     onClick={() => {
                       Navigate("/login");
                     }}

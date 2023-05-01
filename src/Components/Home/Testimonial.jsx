@@ -6,13 +6,11 @@ import yellow_star from "../../Utils/Assests/yellow star.png";
 import BapujiPng from "../../Utils/images/Testimonial/Bapuji_Mallik.png";
 import MonalishaPng from "../../Utils/images/Testimonial/Monalisha_Sahoo.png";
 import PriyankaPng from "../../Utils/images/Testimonial/Priyanka_Biswal.jpg";
-// import Test_1 from "../../Utils/Assests/Test-Design.png";
-// import Test_3 from "../../Utils/Assests/Test_3.png";
 
 import "./Testimonial.css";
 import { useState } from "react";
 
-const Testimonial = () => {
+const Testimonial = () => {                               
   const testi1 = {
     src: MonalishaPng,
     name: "Monalisha Sahoo",
@@ -31,9 +29,15 @@ const Testimonial = () => {
     description:
       "Joining in this Live session ....I have learnt to spend time with myself and relative my stress in a fraction of minute.. delighted to be a part of this class...",
   };
-  const [testimonials, setTestimonials] = useState([testi1, testi2, testi3]);
 
-  const styles = ["ecllip1", "ecllip2", "ecllip3"];
+  {/*                Profile pics state                 */ }
+  const [testimonials, setTestimonials] = useState([
+    testi1,                                                     
+    testi2,
+    testi3,
+  ]);
+
+  const styles = ["ecllip4", "ecllip3", "ecllip2"];                             
 
   const leftClicked = () => {
     setTestimonials((testi) => {
@@ -64,87 +68,86 @@ const Testimonial = () => {
       });
 
       tempTesti.push(firstTesti[0]);
-
+      
       return tempTesti;
     });
   };
-
+  
   return (
-    <div className="RussoOne max500:h-[auto] z-10 ">
-      <div className="bg-black flex flex-col item-center pb-10 ">
-        {/* <img className="Image_1  max980:w-[30vw] absolute z-0" src={Test_1} alt="" /> 
-    <img className="Image absolute z-0" src={Test_1} alt="" /> */}
-        <h1 className=" Test-text text-white-250 max478:text-white-[4rem]">
-          TESTIMONIAL
-        </h1>
-        <div className="">
-          <div className="">
-            <ul className="feedback ">
-              <div className="absolute w-screen flex justify-center flex-col min-h-[25rem] ">
-                {/* <img  className="Design h-[17rem]  object-contain mr-8" src={Test_3} alt="" />
-         <img  className="Design_1 h-[17rem] object-contain " src={Test_3} alt="" /> */}
-              </div>
-              {testimonials.map((test, i) => {
-                return (
-                  <li key={styles[i]}>
-                    <img src={test.src} alt="" className={styles[i]} />
-                  </li>
-                );
-              })}
-              <BsArrowLeftCircle
-                color="white"
-                size={"2rem"}
-                className="absolute left-16 cursor-pointer max536:left-6 max500:left-2 max406:h-[1.5rem]"
-                onClick={leftClicked}
-              />
-              <BsArrowRightCircle
-                color="white"
-                size={"2rem"}
-                className="absolute right-16  cursor-pointer max536:right-6 max500:right-2 max406:h-[1.5rem]"
-                onClick={rightClicked}
-              />
-            </ul>
-          </div>
-          <h1 className="mona">{testimonials[1].name}</h1>
-          <div className="flex relative z-2   justify-center max1050:pl-8 max1050:pr-8 ">
-            <h2 className="text-[1rem]  z-2 des text-white w-[45rem] max800:text-[1rem] max478:text-[0.9rem] text-center font-sans">
-              <span className="text-[1.4rem]">"</span>
-              {testimonials[1].description}{" "}
-              <span className="text-[1.4rem]">"</span>
-            </h2>
-          </div>
+    <div className="RussoOne  max500:h-[22rem] max700:h-[58rem] size h-[48.8rem]  z-10">
+    <div className="Test-size bg-black py-[4rem] flex flex-col item-center  ">
+    <h1 className=" Test-text text-white-250 max478:text-white-[4rem]">
+    TESTIMONIAL
+    </h1>
+    <div className="">
+    <div className=""> 
+        
 
-          <div className="flex  justify-center item-center pt-[1rem]">
-            <img
-              src={yellow_star}
-              className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] max406:h-[1rem]"
-              alt=""
-            />
-            <img
-              src={yellow_star}
-              className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
-              alt=""
-            />
-            <img
-              src={yellow_star}
-              className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
-              alt=""
-            />
-            <img
-              src={yellow_star}
-              className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
-              alt=""
-            />
-            <img
-              src={yellow_star}
-              className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem]  "
-              alt=""
-            />
-          </div>
+    <ul className="feedback ">
+    <div className="absolute w-screen flex justify-center flex-col min-h-[25rem] ">
         </div>
+            {testimonials.map((test, i) => {
+              return (
+                <li key={styles[i]}>
+                  <img src={test.src} alt="" className={styles[i]} />
+                </li>
+              );
+            })}
+            <BsArrowLeftCircle
+            color="white"
+            size={"2rem"}
+            className="absolute left-16 cursor-pointer max536:left-6 max500:left-2 max406:h-[1.5rem]"
+            onClick={leftClicked}
+            />
+            <BsArrowRightCircle
+              color="white"
+              size={"2rem"}
+              className="absolute right-16  cursor-pointer max536:right-6 max500:right-2 max406:h-[1.5rem]"
+              onClick={rightClicked}
+            />
+          </ul>
+        </div>
+        <h1 className="mona h-[5rem]   w-[100%]">{testimonials[1].name}</h1>
+        <div className="flex relative z-2 object-cover  justify-center max1050:pl-8 max1050:pr-8 ">
+          <h2 className="text-[1rem]  z-2 des text-white w-[45rem] max800:text-[1rem] max478:text-[0.9rem] text-center font-sans"><span className="text-[1.4rem]">"</span>
+            {testimonials[1].description} <span className="text-[1.4rem]">"</span>
+          </h2>
+        </div>
+
+        <div className="flex  justify-center item-center pt-[1rem]">
+        <img
+        src={yellow_star}
+        className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] max406:h-[1rem]"
+        alt=""
+        />
+        <img
+        src={yellow_star}
+        className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
+        alt=""
+        />
+        <img
+            src={yellow_star}
+            className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
+            alt=""
+          />
+          <img
+            src={yellow_star}
+            className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
+            alt=""
+          />
+          <img
+          src={yellow_star}
+            className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem]  "
+            alt=""
+          />
+          </div>
+    </div>
+    
+    
+   
       </div>
     </div>
-  );
-};
-
+    );
+  };
+  
 export default Testimonial;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../Components/NavBar";
+import Footer from "../Components/Home/Footer";
 
 const PrivacyPolicy = () => {
   return (
@@ -108,6 +109,7 @@ const PrivacyPolicy = () => {
         </em>{" "}
         <br />
       </div>
+      <Footer />
     </div>
   );
 };
