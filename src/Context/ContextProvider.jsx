@@ -14,7 +14,7 @@ const ContextProvider = (props) => {
 
   const onLoad = () => {
     if (isAuth) {
-      API.get("user", "/user/upcoming-schedule/happyprancer")
+      API.get( "user", "/user/upcoming-schedule/happyprancer")
         .then((classes) => {
           setUpcomingClasses(classes);
         })
