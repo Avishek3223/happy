@@ -8,6 +8,8 @@ function App() {
   const UtilCtx = useRef(useContext(Context).util);
   const UserCtx = useRef(useContext(Context));
 
+  console.log(process.env)
+
   useEffect(() => {
     const check = async () => {
       UtilCtx.current.setLoader(true);

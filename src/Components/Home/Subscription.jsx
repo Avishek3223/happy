@@ -150,13 +150,21 @@ export default function Subscription() {
                 </h1>
                 {Ctx.isAuth ? (
                   <div>
-                    {item.currency === "INR"
-                      ? item.durationText === "Month" && (
-                          <HappyprancerRazorpayMonthly />
-                        )
-                      : item.durationText === "Month" && (
-                          <HappyprancerPaypalMonthly />
-                        )}
+                    {UserCtx.status === "Active" ? (
+                      <p className="text-[1rem] w-[15rem] px-12 py-2 rounded-2xl text-[#225c59] bg-white border-[#225c59] border-[0.2rem] h-[3rem] flex justify-center items-center mt-16 max450:w-[60vw]">
+                        Already Subscribed
+                      </p>
+                    ) : (
+                      <>
+                        {item.currency === "INR"
+                          ? item.durationText === "Month" && (
+                              <HappyprancerRazorpayMonthly />
+                            )
+                          : item.durationText === "Month" && (
+                              <HappyprancerPaypalMonthly />
+                            )}
+                      </>
+                    )}
                   </div>
                 ) : (
                   <button

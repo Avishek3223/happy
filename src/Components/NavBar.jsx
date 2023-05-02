@@ -17,82 +17,81 @@ const NavBar = () => {
   const location = useLocation();
 
   return (
-    <div                                       
+    <div
       className={`   h-8 z-50 ${
         location.pathname === "/dashboard" ? "max536:h-[5rem]  max536:mt-0" : ""
       } `}
     >
       <div className=" flex z-30 fixed items-center justify-between text-white w-screen bg-black border-b border-[#1b7571]  h-[3.8rem] px-10 left-0 max536:bg-black">
-      <a
-      href="/"
-      className={`logo bg-[#fff] w-[8rem] h-[2.4rem] rounded-xl flex items-center justify-center  ${
-        location.pathname === "/dashboard" ? "max536:hidden" : ""
-      }`}
-    >
-    <img
-    className="relative rounded-301xl w-full p-1 h-[2rem] shrink-0 object-contain"
-    alt=""
-    src={logo}
-  />
-    </a>
-                                                                                          {/*      Main Top Nav Bar           */}
-      <ul className="flex gap-6  max800:hidden font-poppins  ">
-      <li className="flex items-center justify-center  hover:text-[#1b7571] ">
-        <p
-          className="cursor-pointer"
-          onClick={() => {
-            Navigate("/");
-          }}
+        <a
+          href="/"
+          className={`logo bg-[#fff] w-[8rem] h-[2.4rem] rounded-xl flex items-center justify-center  ${
+            location.pathname === "/dashboard" ? "max536:hidden" : ""
+          }`}
         >
-          HOME
-        </p>
-      </li>
-      <li className="flex items-center justify-center cursor-pointer hover:text-[#1b7571]">
-        <p
-          className="cursor-pointer"
-          onClick={() => {
-            Navigate("/aboutus");
-          }}
-        >
-          ABOUT US
-        </p>
-      </li>
-     
-      <li className="flex items-center justify-center  cursor-pointer hover:text-[#1b7571] ">
-        <p
-          className="cursor-pointer"
-          onClick={() => {
-            Navigate("/instructor");
-          }}
-        >
-          INSTRUCTOR
-        </p>
-      </li>
-      <a className="max800:hidden flex items-center justify-center p-0 m-0">
-        {UserCtx.isAuth ? (
-          <p
-            onClick={() => {
-              Navigate("/dashboard");
-            }}
-            className="cursor-pointer  max800:hidden w-[10rem] text-center mr-10  p-2 py-1 border-solid border-2 border-[#1b7571] rounded-md "
-          >
-            {UserCtx.userData.userName}
-          </p>
-        ) : (
-          <button
-            className="max800:hidden  p-2 py-1 bg-[#1b7571] w-[6.5rem] h-[2.63rem] rounded-md text-white font-russo"
-            onClick={() => {
-              Navigate("/login");
-            }}
-          >
-            Login
-          </button>
-      
-        )}
-      </a>
-    </ul>
-                                                                                    {/*      Second NavBar           */}
-        
+          <img
+            className="relative rounded-301xl w-full p-1 h-[2rem] shrink-0 object-contain"
+            alt=""
+            src={logo}
+          />
+        </a>
+        {/*      Main Top Nav Bar           */}
+        <ul className="flex gap-6  max800:hidden font-poppins  ">
+          <li className="flex items-center justify-center  hover:text-[#1b7571] ">
+            <p
+              className="cursor-pointer"
+              onClick={() => {
+                Navigate("/");
+              }}
+            >
+              HOME
+            </p>
+          </li>
+          <li className="flex items-center justify-center cursor-pointer hover:text-[#1b7571]">
+            <p
+              className="cursor-pointer"
+              onClick={() => {
+                Navigate("/aboutus");
+              }}
+            >
+              ABOUT US
+            </p>
+          </li>
+
+          <li className="flex items-center justify-center  cursor-pointer hover:text-[#1b7571] ">
+            <p
+              className="cursor-pointer"
+              onClick={() => {
+                Navigate("/instructor");
+              }}
+            >
+              INSTRUCTOR
+            </p>
+          </li>
+          <span className="max800:hidden flex items-center justify-center p-0 m-0">
+            {UserCtx.isAuth ? (
+              <p
+                onClick={() => {
+                  Navigate("/dashboard");
+                }}
+                className="cursor-pointer  max800:hidden w-[10rem] text-center mr-10  p-2 py-1 border-solid border-2 border-[#1b7571] rounded-md "
+              >
+                {UserCtx.userData.userName}
+              </p>
+            ) : (
+              <button
+                className="max800:hidden  p-2 py-1 bg-[#1b7571] w-[6.5rem] h-[2.63rem] rounded-md text-white font-russo"
+                onClick={() => {
+                  Navigate("/login");
+                }}
+              >
+                Login
+              </button>
+            )}
+          </span>
+        </ul>
+        {/*      Second NavBar           */}
+
         <div
           className={`relative min800:hidden max800:block w-[auto] ${
             location.pathname === "/dashboard" ? "max536:hidden" : ""
@@ -124,7 +123,7 @@ const NavBar = () => {
                   About Us
                 </p>
               </li>
-              
+
               <li className="flex items-center justify-center h-10  hover:bg-[#1b7571]">
                 <p
                   className="cursor-pointer"
@@ -158,7 +157,7 @@ const NavBar = () => {
           )}
         </div>
 
-                                                                                        {/*       Mobile Navbar        */}
+        {/*       Mobile Navbar        */}
         <div
           className={`min536:hidden max536:fixed top-0 left-0 z-40 bg-black`}
         >
@@ -218,7 +217,7 @@ const NavBar = () => {
                     About Us
                   </p>
                 </li>
-                
+
                 <li className="flex items-center justify-center   hover:text-[#1b7571]">
                   <p
                     className="cursor-pointer"
