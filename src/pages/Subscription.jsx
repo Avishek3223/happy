@@ -16,7 +16,7 @@ export default function Subscription() {
   return (
     <>
       <NavBar />
-      <div className="Back text-[1.5rem]  flex  flex-col items-center h-[50rem] max980:h-[auto] justify-center gap-[5rem] pb-20 bg-[#f5f5f5]">
+      <div className="Back text-[1.5rem]  flex  flex-col items-center h-[54rem] max980:h-[auto] justify-center gap-[5rem] pb-20 bg-[#f5f5f5]">
         <div className="text-center mt-20 RussoOne ">
           <h1>Monthly Membership Subscription </h1>
           <h3 className="text-[1rem]">see what are the pricing in details</h3>
@@ -24,9 +24,9 @@ export default function Subscription() {
         <ul className="flex flex-wrap justify-center w-[90vw] max-w-[80rem] gap-28 ">
           {Ctx.productList.map((item) => {
             return (
-              <li className="bg-white w-[24rem] h-[32rem] p-16 rounded-[2rem] z-0  flex flex-col items-center gap-8 shadowSubscribe   max450:w-[90vw] max450:gap-4 max450:text-[1rem] max450:min-h-[28rem] max450:h-auto max450:p-12 border-[#225c59] border-[0.1rem]">
+              <li className="bg-white w-[24rem] h-[42rem] p-16 rounded-[2rem] z-0  flex flex-col items-center gap-8 shadowSubscribe   max450:w-[90vw] max450:gap-4 max450:text-[1rem] max450:min-h-[28rem] max450:h-auto max450:p-12 border-[#225c59] border-[0.1rem]">
                 <p className="text-[1.6rem]">{item.heading}</p>
-                <p className="overflow-hidden text-[1rem]">
+                <p className="overflow-hidden text-[1rem] h-auto">
                   {item.description}
                 </p>
                 <h1 className="text-left w-[100%]">
@@ -36,7 +36,7 @@ export default function Subscription() {
                     item.durationText}
                 </h1>
                 {Ctx.isAuth ? (
-                  <div>
+                  <div className=" ">
                     {UserCtx.status === "Active" ? (
                       <p className="text-[1rem] w-[15rem] px-12 py-2 rounded-2xl text-[#225c59] bg-white border-[#225c59] border-[0.2rem] h-[3rem] flex justify-center items-center mt-16 max450:w-[60vw]">
                         Already Subscribed

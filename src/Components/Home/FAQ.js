@@ -15,15 +15,15 @@ const data = {
     },
     {
       title: "Do I have to pay any subscription charges ?",
-      content: `Currently there is no subscription charges to join and participate in Zumba classes.`,
+      content: `Currently, Indian members can enjoy a special discount and join Happyprancer Live Zumba sessions for just ₹499 per month, while international users can join for $12 per month.`,
     },
     {
       title: "How can I join as an Instructor?",
-      content: `We are looking certified Zumba instructors and we also pay for Zumba certifications to deserving candidates. Please <a href="/careers" style="color: #1b7571;"><u>Click here</u></a> and fill the form to apply.`,
+      content: `If you're passionate about dance and interested in becoming a Happyprancer instructor, simply send us an email at admin@happyprancer.com with your work experience and we'll be in touch!`,
     },
     {
       title: "I am a GYM owner. How can I connect?",
-      content: `Please <a href="/gym-affiliation" style="color: #1b7571;"><u>Click here</u></a> and fill the form to be affiliated.`,
+      content: `Connect with us at awsaiapp.com to explore how we can assist you with detailed instructions and support.`,
     },
   ],
 };

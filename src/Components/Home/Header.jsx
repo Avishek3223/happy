@@ -4,7 +4,7 @@ import video from "../../Utils/Happy/images/backgroundvideo.mp4";
 const Header = () => {
 
   return (
-    <div className=" flex items-center justify-center h-[30rem]">
+    <div className=" flex items-center justify-center h-[30rem] pb-20">
       <div className="absolute z-10 flex flex-col items-center w-screen content ">
         <div className="w-[auto] text-left flex">
           <h1 className="w-full max1250:w-[50%] max536:w-[90vw] max800:w-[80%]  text-[5.7rem] max800:text-[3.8rem] max1250:text-[4.5rem] text-white ">
@@ -29,7 +29,7 @@ const Header = () => {
           muted
           playsInline={true}
           controls={false}
-          className="object-cover h-[30rem] w-screen   max-w-screen"
+          className="object-cover h-[38rem] w-screen   max-w-screen"
         >
           <source src={video} type="video/mp4" />
         </video>

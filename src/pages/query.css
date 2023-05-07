@@ -1,5 +1,5 @@
 .Background{
-    --bg-image: url(../Utils/Assests/Price.jpg);
+    --bg-image: url(../Utils/Happy/images/bg.png);
     --bg-image-opacity: .4;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.5);

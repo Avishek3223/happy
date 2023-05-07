@@ -81,7 +81,7 @@ const LeftBanner = ({ displayAfterClick }) => {
               size={"1.9rem"}
               className="mr-2 min-w-[1.9rem] max1050:mr-0 "
             />
-            <p className="max1050:hidden">Choreography</p>
+            <p className="max1050:hidden">Video</p>
           </li>
           <li
             className={`flex items-center text-[1.1rem] w-[86%] my-3 p-2 font-bold text-white rounded-md min1050:hidden ${

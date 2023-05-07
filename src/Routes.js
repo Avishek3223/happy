@@ -13,6 +13,7 @@ import PaymentFailed from "./pages/PaymentFailed";
 import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
+import Refund from "./pages/Refund";
 
 const RoutesContainer = () => {
   return (
@@ -31,6 +32,7 @@ const RoutesContainer = () => {
       <Route path="/paymentfailed" element={<PaymentFailed />} />
       <Route path="/privacypolicy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<Terms />} />
+      <Route path="/refund" element={<Refund />} />
     </Routes>
   );
 };

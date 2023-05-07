@@ -61,9 +61,16 @@ export default function Query() {
         </div>
         <div className="mb-10">
           <div className="bg-white flex  px-5 shadow-2xl gap-8 max500:w-[80vw]">
-            <div className="py-10 max850:hidden">
-              <img src={query} alt="" />
-            </div>
+            <div className="m-2 p-10 max850:hidden bg-[#1b7571] w-[18rem] h-[30rem] flex flex-col gap-[1rem]">
+                 <span className="font-bold text-[1.6rem] w-full text-white leading-7">Contact Information </span>
+                  <div className="text-[0.9rem] text-white"> Already a Customer or need help ?  </div> 
+                  <div className="flex text-white text-[0.8rem] flex-col">
+                  <span className="text-[#74ece6] font-bold text-[1.4rem] mt-[2rem]">Contact Support</span> 
+                  <a href="happyprancer.com" className="font-bold">Happy Prancer </a>
+                  <span>Email - admin@happyprancer.com</span> 
+                  <span>Mobile - +918249675567</span> 
+                  <span>Address - C52, Banpur, Khordha, Odisha, India, 752031</span> </div>
+                  </div>
             <div className="border-black border-[1px] bg-black my-8 max850:hidden"></div>
             <div className="RussoOne flex flex-col items-center gap-10 py-4">
               <h3>FILL IT UP!</h3>
@@ -111,7 +118,7 @@ export default function Query() {
                   </li>
                 </ul>
                 <button
-                  className="RussoOne bg-[#EFC40B] rounded-lg w-[8rem] text-white py-2 "
+                  className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 "
                   onClick={onSubmit}
                 >
                   Submit

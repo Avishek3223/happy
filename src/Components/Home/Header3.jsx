@@ -6,7 +6,7 @@ import image3 from "../../Utils/images/section1-items/section-1-item-3.png";
 
 const Header3 = () => {
   return (
-    <div className="flex justify-center flex-col items-center min-h-[50vh] gap-6 max850:h-auto py-20 ">
+    <div className="flex justify-center flex-col items-center min-h-[50vh] gap-5 max850:h-auto py-20 ">
       <h3 className="text-[#999999] font-semibold text-[1.2rem]">
         A Fitness Movement
       </h3>

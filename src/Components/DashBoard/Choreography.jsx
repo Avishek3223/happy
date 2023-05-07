@@ -118,7 +118,7 @@ const Choreography = () => {
       <iframe 
       width="960" 
       height="500" 
-      src="https://www.youtube.com/embed/videoseries?list=PLkl_0nrWH4iGcol0Y-itDyDRk0CffS1Q3" 
+      src="https://www.youtube.com/embed/LL1rcLytUXE" 
       title="YouTube video player" 
       frameborder="0" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

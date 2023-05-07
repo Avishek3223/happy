@@ -132,7 +132,7 @@ const Footer = (props) => {
               </p>
             </li> */}
 
-            <li className="RussoOne flex flex-col gap-4 items-center text-center">
+         {/*   <li className="RussoOne flex flex-col gap-4 items-center text-center">
               <h2>Affiliated Gyms</h2>
               <hr className="w-[100%] text-white " />
               {/* <p
@@ -174,20 +174,20 @@ const Footer = (props) => {
                 }}
               >
                 Community Support
-              </p> */}
+              </p> 
               <a
                 className="cursor-pointer"
-                href="https://happyprancer.com/"
+                href="https://bworkzlive.com/"
                 target={"_blank"}
               >
-                HappyPrancer
+                BWorkz
               </a>
-            </li>
+            </li>        */}
           </ul>
         </div>
 
         <div className="py-[0.4rem] px-8 h-16 bg-[#225c59]">                                                                            {/* Social media Links  */}
-           <div className="flex bg-black justify-between items-center w-[15%] min-w-[10rem] max-w-[12rem] rounded-2xl h-12 p-4">
+           <div className="flex bg-black justify-between items-center w-[10%] min-w-[5rem] max-w-[7rem] rounded-2xl h-12 p-4">
             <a
               href="https://instagram.com/happyprancer_workout?igshid=YmMyMTA2M2Y"
               target={"_blank"}
@@ -208,13 +208,13 @@ const Footer = (props) => {
                 className="hover:mr-2 hover:w-10 hover:h-10 w-8 h-8"
               />
             </a>
-            <a href="/" target={"_blank"}>
+            {/*  <a href="https://www.youtube.com/@amazonwebservices" target={"_blank"}>
               <img
                 src={youtube}
                 alt=""
                 className="hover:mr-1 hover:w-10 hover:h-10 w-8 h-8"
-              />
-            </a>
+            /> 
+            </a>     */}
           </div> 
         </div>
 
@@ -223,9 +223,9 @@ const Footer = (props) => {
           <div className="bg-[#225c59] w-1 border-white rounded-md"></div>
           <Link to={"/terms"}> Terms and Condition </Link>
           <div className="bg-[#225c59] w-1 border-white rounded-md"></div>
-          <Link to={"/terms"}>  Cancellation/Refund Policy </Link>
+          <Link to={"/refund"}>  Cancellation/Refund Policy </Link>
           <div className="bg-[#225c59] w-1 border-white rounded-md"></div>
-          <h5>&copy; All Rights are Reserved By HAPPY PRANCER</h5>
+          <h5> All rights reserved. © 2023 happyprancer.com</h5>
         </div>
       </div>
     </div>

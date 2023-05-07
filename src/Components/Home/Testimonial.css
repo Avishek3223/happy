@@ -173,11 +173,7 @@
         height: 6rem;
          width: 6rem; 
     }
-    .ecllip3{
-        height: 10rem;
-        width: 10rem; 
-        
-    }
+   
 
    
     
@@ -316,5 +312,6 @@
     }
     .Test-size{
         padding-bottom: 2rem;
+        height:48rem;
     }
 }
