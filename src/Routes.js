@@ -14,6 +14,7 @@ import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Refund from "./pages/Refund";
+import Logout from "./pages/Logout";
 
 const RoutesContainer = () => {
   return (
@@ -23,7 +24,7 @@ const RoutesContainer = () => {
       <Route path="/aboutus" element={<About />} />
       <Route path="/instructor" element={<Instructor />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
+      <Route path="/logout" element={<Logout />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/query" element={<Query />} />
       <Route path="/subscription" element={<Subscription />} />
