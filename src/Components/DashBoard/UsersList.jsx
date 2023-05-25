@@ -110,13 +110,17 @@ const UsersList = () => {
                     <p className="w-[25%] text-left overflow-auto max1050:text-[0.8rem]  max536:hidden">
                       {user.phoneNumber}
                     </p>
-                    <p className="overflow-hidden w-[3.7rem]  ">{user.zPoints}</p>
+                    <p className="overflow-hidden w-[3.7rem]  ">
+                      {user.currentMonthZPoints
+                        ? user.lastMonthZPoints
+                        : 0 + "/" + user.lastMonthZPoints}
+                    </p>
                     <p className="w-[3.4rem] mr-4   rounded px-2 bg-[] max-h-[1.8rem] self-center flex justify-center items-center max536:mr-0">
                       {/* {new Date(user.date).toLocaleDateString("en-us", {
                       day: "2-digit",
                       month: "2-digit",
                     })} */}
-                      {user.balance }
+                      {user.balance}
                     </p>
                   </div>
                 </li>

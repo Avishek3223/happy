@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const LeftBanner = ({ displayAfterClick }) => {
   const [click, setClick] = useState(0);
-  const UserCtx = useContext(Context);
+  const UserCtx = useContext(Context).userData;
 
   const Navigate = useNavigate();
 
@@ -19,7 +19,16 @@ const LeftBanner = ({ displayAfterClick }) => {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuNFyw05KSucqjifL3PhDFrZLQh7QAS-DTw&usqp=CAU80-804949_profile-icon-for-the-politics-category-circle-hd.png"
           className="h-24 w-24 rounded-[50%] "
         />
-        <p className="pt-3 font-bold">{UserCtx.userData.userName}</p>
+        <p className="pt-3 font-bold">{UserCtx.userName}</p>
+        <p className="pt-3 font-bold">
+          {"Attendance: " +
+            UserCtx.lastMonthZPoints +
+            "/" +
+            (UserCtx.currentMonthZPoints === undefined
+              ? "0"
+              : UserCtx.currentMonthZPoints)}
+        </p>
+        <p className="pt-3 font-bold">{"Due: " + UserCtx.balance}</p>
         <button
           className="px-3 py-1 mt-2 text-black bg-gray-400 rounded-xl"
           onClick={() => {
@@ -99,8 +108,8 @@ const LeftBanner = ({ displayAfterClick }) => {
               className="mr-2 min-w-[1.9rem] max1050:mr-0 "
             />
           </li>
-          {(UserCtx.userData.userType === "admin" ||
-            UserCtx.userData.userType === "instructor") && (
+          {(UserCtx.userType === "admin" ||
+            UserCtx.userType === "instructor") && (
             <li
               className={`flex items-center text-[1.1rem] w-[86%] my-3 p-2 font-bold text-white rounded-md  ${
                 click === 4 &&
