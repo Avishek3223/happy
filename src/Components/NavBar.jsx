@@ -74,7 +74,7 @@ const NavBar = () => {
                 onClick={() => {
                   Navigate("/dashboard");
                 }}
-                className="cursor-pointer  max800:hidden w-[10rem] text-center mr-10  p-2 py-1 border-solid border-2 border-[#1b7571] rounded-md "
+                className="cursor-pointer overflow-hidden  max800:hidden w-[10rem] text-center mr-10  p-2 py-1 border-solid border-2 border-[#1b7571] rounded-md "
               >
                 {UserCtx.userData.userName}
               </p>
@@ -136,7 +136,7 @@ const NavBar = () => {
               </li>
               {UserCtx.isAuth ? (
                 <li
-                  className="flex items-center justify-center h-10  hover:bg-[#1b7571] "
+                  className="flex items-center overflow-hidden justify-center h-10  hover:bg-[#1b7571] "
                   onClick={() => {
                     Navigate("/dashboard");
                   }}
@@ -230,7 +230,7 @@ const NavBar = () => {
                 </li>
                 {UserCtx.isAuth ? (
                   <li
-                    className="flex items-center justify-center h-10 cursor-pointer mt-[4rem] border-b border-white hover:bg-[#1b7571]"
+                    className="flex items-center  justify-center h-10 cursor-pointer mt-[4rem] border-b overflow-hidden border-white hover:bg-[#1b7571]"
                     onClick={() => {
                       Navigate("/dashboard");
                     }}

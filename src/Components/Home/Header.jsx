@@ -29,7 +29,7 @@ const Header = () => {
           muted
           playsInline={true}
           controls={false}
-          className="object-cover h-[38rem] w-screen   max-w-screen"
+          className="object-cover object-top h-[38rem] w-screen   max-w-screen"
         >
           <source src={video} type="video/mp4" />
         </video>

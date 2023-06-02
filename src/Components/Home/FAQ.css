@@ -13,6 +13,10 @@
   margin: 10px 0;
 }
 
+.textfont{
+  font-size: 2.5rem;
+}
+
 @media (max-width: 844px) {
   .home-faq {
     padding: 4rem;
