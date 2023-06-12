@@ -17,12 +17,11 @@ export default function HappyprancerInstructorMonthly() {
           color: "gold",
           layout: "vertical",
           label: "subscribe",
-          tagline: "false",
         },
         createSubscription: (data, actions, err, can) => {
           return actions.subscription.create({
             intent: "subscription",
-            plan_id: "P-49X49202J6495240FMINKALY",
+            plan_id: "P-4WM30609EU9198254MQZDUIA",
           });
         },
 
