@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import DashBoard from "./pages/DashBoard";
 import Home from "./pages/Home";
+import Logout from "./pages/Logout";
+import ErrorPage from "./pages/Error";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import About from "./pages/AboutUs";
@@ -14,7 +16,6 @@ import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Refund from "./pages/Refund";
-import Logout from "./pages/Logout";
 
 const RoutesContainer = () => {
   return (
@@ -34,6 +35,7 @@ const RoutesContainer = () => {
       <Route path="/privacypolicy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/refund" element={<Refund />} />
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 };

@@ -20,6 +20,7 @@ const ProfileUpdate = () => {
   const [isEmailChange, setIsEmailChange] = useState(false);
   const [isEmailCode, setIsEmailCode] = useState(false);
   const [err, setErr] = useState("");
+  
 
   // const ifDateChanged = () => {
   //   if (
@@ -202,6 +203,7 @@ const ProfileUpdate = () => {
                       setErr("");
                       setIsEmailChange(true);
                     }}
+                    type="Button"
                   >
                     Change Email
                   </button>
@@ -212,13 +214,16 @@ const ProfileUpdate = () => {
                       setErr("");
                       setIsChangePassword(true);
                     }}
+                    type="Button"
                   >
                     Change Password
                   </button>
                   <div className="flex justify-center">
+                    
                     <button
                       className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 "
                       onClick={onProfileUpdate}
+                      type="submit"
                     >
                       Confirm
                     </button>
@@ -281,12 +286,29 @@ const ProfileUpdate = () => {
                   {err && (
                     <p className="text-[0.8rem] mt-2 text-red-500">{err}</p>
                   )}
-                  <button
-                    onClick={onPasswordChange}
-                    className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
-                  >
-                    Change
-                  </button>
+                  
+                  <div className="flex gap-5">
+                    <button
+                      className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setErr("");
+                        setIsChangePassword(false);
+                      }}
+                      type="Button"
+                    >
+                      Cancle
+                    </button>
+                      
+                    <button
+                      onClick={onEmailChange}
+                      className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
+                      type="submit"
+                    >
+                      Send Code
+                    </button>
+                    
+                    </div>
                 </form>
               </>
             )}
@@ -312,12 +334,28 @@ const ProfileUpdate = () => {
                   {err && (
                     <p className="text-[0.8rem] mt-2 text-red-500">{err}</p>
                   )}
-                  <button
-                    onClick={onEmailChange}
-                    className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
-                  >
-                    Send Code
-                  </button>
+                    <div className="flex gap-5">
+                    <button
+                      className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setErr("");
+                        setIsEmailChange(false);
+                      }}
+                      type="Button"
+                    >
+                      Cancle
+                    </button>
+                      
+                    <button
+                      onClick={onEmailChange}
+                      className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
+                      type="submit"
+                    >
+                      Send Code
+                    </button>
+                    
+                    </div>
                 </form>
               </div>
             ) : (
@@ -340,12 +378,28 @@ const ProfileUpdate = () => {
                   {err && (
                     <p className="text-[0.8rem] mt-2 text-red-500">{err}</p>
                   )}
-                  <button
-                    onClick={onEmailCodeConfirm}
-                    className="RussoOne bg-[#EFC40B] rounded-lg w-[8rem] text-white py-2 mt-8 "
-                  >
-                    Confirm Code
-                  </button>
+                  <div className="flex gap-5">
+                    <button
+                      className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setErr("");
+                        setIsEmailChange(false);
+                      }}
+                      type="Button"
+                    >
+                      Cancle
+                    </button>
+                      
+                    <button
+                      onClick={onEmailChange}
+                      className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
+                      type="submit"
+                    >
+                      Confirm
+                    </button>
+                    
+                    </div>
                 </form>
               </div>
             )}

@@ -46,10 +46,10 @@ export default function FAQ() {
     
       <div className="home-faq flex flex-col  items-center justify-center gap-[5rem] max800:py-[20rem]">
       <div className=" flex flex-col p-[5rem] max800:px-[5rem] ">
-      <div className="rounded-6xl box-border w-[18.88rem] h-[3.06rem] shrink-0 overflow-hidden flex flex-row  items-center justify-center border-[1px] border-solid border-black">
+      <div className="rounded-6xl box-border w-[18.88rem] h-[3.06rem] shrink-0 overflow-hidden flex flex-row  items-center justify-center">
         <div className="flex flex-row p-[0.53rem] items-center justify-center">
-          <div className="relative text-[1rem] font-bold">
-            Frequently Ask Questions
+          <div className="relative textfont font-bold">
+            FAQs
           </div>
         </div>
       </div>

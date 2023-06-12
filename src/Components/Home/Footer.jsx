@@ -29,18 +29,9 @@ const Footer = (props) => {
 
           <ul className=" flex gap-32 max950:gap-16 text-white flex-wrap max1050:justify-center ">           {/* Quick Links  */}
             <li className="RussoOne flex flex-col gap-4 items-center text-cente ">
-              <h2 className="">About Us</h2>                    
+              <h2 className="">Usefull Links</h2>                    
               <hr className="w-[100%] text-white " />
-              <p
-                className="cursor-pointer"
-                value={content}
-                onChange={handleContentChange}
-                onClick={() => {
-                  Navigate("/aboutus");
-                }}
-              >
-                About Us
-              </p>
+              
               <p
                 className="cursor-pointer"
                 onClick={() => {
@@ -49,14 +40,20 @@ const Footer = (props) => {
               >
                 Contact Us
               </p>
-              <p
+              <a
                 className="cursor-pointer"
-                onClick={() => {
-                  Navigate("/instructor");
-                }}
+                href="https://bworkzlive.com/"
+                target={"_blank"}
               >
-                Instructor
-              </p>
+                BWorkz
+              </a>
+              <a
+                className="cursor-pointer"
+                href="https://Zumba.com/"
+                target={"_blank"}
+              >
+                Zumba
+              </a>
               {/* <a
                 className="cursor-pointer"
                 href="https://youtube.com/@bworkzworkout2004"
@@ -189,7 +186,7 @@ const Footer = (props) => {
         <div className="py-[0.4rem] px-8 h-16 bg-[#225c59]">                                                                            {/* Social media Links  */}
            <div className="flex bg-black justify-between items-center w-[10%] min-w-[5rem] max-w-[7rem] rounded-2xl h-12 p-4">
             <a
-              href="https://instagram.com/happyprancer_workout?igshid=YmMyMTA2M2Y"
+              href="https://instagram.com/HappyPrancer"
               target={"_blank"}
             >
               <img
@@ -199,7 +196,7 @@ const Footer = (props) => {
               />
             </a>
             <a
-              href="https://www.facebook.com/happyprancerLive?mibextid=LQQJ4d"
+              href="https://www.facebook.com/HappyPrancer"
               target={"_blank"}
             >
               <img
