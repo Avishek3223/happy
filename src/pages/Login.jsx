@@ -22,12 +22,12 @@ const Login = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-  
+
     UtilCtx.setLoader(true);
-  
+
     try {
       const user = await Auth.signIn(email, password);
-  
+
       if (user) {
         const userdata = await API.get("user", "/user/profile/happyprancer");
         UserCtx.setUserData(userdata);
@@ -35,7 +35,7 @@ const Login = () => {
         UtilCtx.setLoader(false);
         alert("Logged In");
         console.log(userdata.status);
-  
+
         if (userdata.status.trim() === "Active") {
           Navigate("/dashboard");
         } else {
@@ -46,10 +46,16 @@ const Login = () => {
         UtilCtx.setLoader(false);
       }
     } catch (e) {
-      setErr(e.message);
+      if (e.toString().split(" code ")[1]?.trim() === "404") {
+        console.log("User Not Found");
+        alert("You Must Sign Up First and use the same email and password");
+        Navigate("/signup?newuser=false");
+        setErr("");
+      } else {
+        setErr(e.message);
+      }
       UtilCtx.setLoader(false);
     }
- 
   };
 
   return (

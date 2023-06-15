@@ -5,8 +5,7 @@ import DanceAuth from "../Utils/Png/danceAuth.png";
 import Context from "../Context/Context";
 import { useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -19,46 +18,55 @@ const SignUp = () => {
   const [confirmationCode, setConfirmationCode] = useState(0);
   const [err, setErr] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [isNewUser, setIsNewUser] = useState(true);
+
   const UtilCtx = useContext(Context).util;
   const UserCtx = useContext(Context);
   const Navigate = useNavigate();
 
-  
-const [counter, setCounter] = useState(60); // Timer counter
-const [resendVisible, setResendVisible] = useState(false); // Resend OTP visibility
+  const [counter, setCounter] = useState(60); // Timer counter
+  const [resendVisible, setResendVisible] = useState(false); // Resend OTP visibility
 
-// Function to handle resend OTP
-const resendOTP = async (event) => {
-  event.preventDefault();
-  try {
-    if (email) {
-      await Auth.resendSignUp(email);
-      setCounter(60); // Reset the timer
-      setResendVisible(false); // Hide the resend button
-      setErr("OTP resent successfully."); // Provide appropriate feedback to the user
-    } else {
-      setErr("Please enter your email address."); // Provide appropriate feedback to the user
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+
+    if (query.get("newuser") === "false") {
+      setIsNewUser(false);
     }
-  } catch (error) {
-    setErr(error.message); // Handle any error occurred during the resend process
-  }
-};
+  }, []);
 
-useEffect(() => {
-  let timer = null;
-  if (counter > 0) {
-    timer = setInterval(() => setCounter((prevCounter) => prevCounter - 1), 1000);
-  } else {
-    setResendVisible(true); // Display the resend button when timer reaches 0
-  }
-
-  return () => {
-    clearInterval(timer);
+  // Function to handle resend OTP
+  const resendOTP = async (event) => {
+    event.preventDefault();
+    try {
+      if (email) {
+        await Auth.resendSignUp(email);
+        setCounter(60); // Reset the timer
+        setResendVisible(false); // Hide the resend button
+        setErr("OTP resent successfully."); // Provide appropriate feedback to the user
+      } else {
+        setErr("Please enter your email address."); // Provide appropriate feedback to the user
+      }
+    } catch (error) {
+      setErr(error.message); // Handle any error occurred during the resend process
+    }
   };
-}, [counter]);
 
-  
-  
+  useEffect(() => {
+    let timer = null;
+    if (counter > 0) {
+      timer = setInterval(
+        () => setCounter((prevCounter) => prevCounter - 1),
+        1000
+      );
+    } else {
+      setResendVisible(true); // Display the resend button when timer reaches 0
+    }
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [counter]);
 
   const passwordVisibilityChange = () => {
     setPasswordVisible((prevState) => !prevState);
@@ -99,11 +107,49 @@ useEffect(() => {
     }
   };
 
+  const userExistSignUp = async () => {
+    try {
+      console.log("Sign in");
+      await Auth.signIn(email, password);
+      console.log("post");
+      await API.post("user", "/user/profile/rtiger", {
+        body: {
+          emailId: email,
+          userName: name,
+          phoneNumber: phoneNumber,
+          country: country,
+        },
+      });
+      const userdata = await API.get("user", "/user/profile/rtiger");
+      //Temporary
+      // userdata.Status = true;
+      UserCtx.setUserData(userdata);
+      UserCtx.setIsAuth(true);
+      UtilCtx.setLoader(false);
+      alert("Signed Up");
+      if (userdata.status === "Active") {
+        Navigate("/dashboard");
+      }
+      Navigate("/subscription");
+    } catch (error) {
+      UtilCtx.setLoader(false);
+      console.log("Error:", error.message);
+      throw error;
+    }
+  };
+
   const onSubmit = async (event) => {
     event.preventDefault();
 
+    UtilCtx.setLoader(true);
+
     try {
       if (form1Validator()) {
+        if (!isNewUser) {
+          await userExistSignUp();
+          UtilCtx.setLoader(false);
+          return;
+        }
         const newUserCheck = await Auth.signUp({
           username: email,
           password: password,
@@ -112,6 +158,7 @@ useEffect(() => {
       }
     } catch (e) {
       setErr(e.message);
+      UtilCtx.setLoader(false);
     }
   };
 
@@ -129,6 +176,7 @@ useEffect(() => {
             emailId: email,
             userName: name,
             phoneNumber: phoneNumber,
+            country: country,
           },
         });
         const userdata = await API.get("user", "/user/profile/happyprancer");
@@ -252,9 +300,9 @@ useEffect(() => {
           <li className="flex items-center gap-20 mt-8 max500:flex-col max500:gap-2 max500:items-start">
             <label className="w-20 max500:ml-3">OTP Code</label>
             <ValidatorForm>
-             <TextValidator
+              <TextValidator
                 label={
-                  <span style={{ color: '#225c59' }}>Enter 6 Digit OTP</span>
+                  <span style={{ color: "#225c59" }}>Enter 6 Digit OTP</span>
                 }
                 variant="outlined"
                 inputProps={{ maxLength: 6 }}
@@ -262,23 +310,33 @@ useEffect(() => {
                 size="small"
                 type="text"
                 fullWidth
-                validators={['required']}
-                errorMessages={['OTP is required']}
-              value={confirmationCode === 0 ? "" : confirmationCode}
-              onChange={(e) => {
-                setConfirmationCode(e.target.value);
-              }}
-            />
+                validators={["required"]}
+                errorMessages={["OTP is required"]}
+                value={confirmationCode === 0 ? "" : confirmationCode}
+                onChange={(e) => {
+                  setConfirmationCode(e.target.value);
+                }}
+              />
             </ValidatorForm>
-            </li>
-            {resendVisible ? (
-              <button className="mt-[1rem] ml-[5rem]" onClick={resendOTP}>Resend OTP</button>
-            ) : (
-              <p className="mt-[1rem]">Resend OTP in <span className="text-[#225c59] font-bold">{counter}</span> seconds</p>
-            )}
+          </li>
+          {resendVisible ? (
+            <button className="mt-[1rem] ml-[5rem]" onClick={resendOTP}>
+              Resend OTP
+            </button>
+          ) : (
+            <p className="mt-[1rem]">
+              Resend OTP in{" "}
+              <span className="text-[#225c59] font-bold">{counter}</span>{" "}
+              seconds
+            </p>
+          )}
         </ul>
         {err && <p className="text-[0.8rem] mt-2 text-red-500">{err}</p>}
-        <p className="text-center w-[80%] text-[0.81rem]"><strong className="text-red-500">Note*</strong> An OTP has been sent to “same_email”. Please check your inbox, and in case you don’t find it there, kindly review the spam folder.</p>
+        <p className="text-center w-[80%] text-[0.81rem]">
+          <strong className="text-red-500">Note*</strong> An OTP has been sent
+          to “same_email”. Please check your inbox, and in case you don’t find
+          it there, kindly review the spam folder.
+        </p>
         <button
           className="p-4 py-1 mt-6 mb-3 text-white bg-[#225c59] rounded-lg"
           onClick={onConfirmationSubmit}
