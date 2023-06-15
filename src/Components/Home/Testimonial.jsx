@@ -30,7 +30,7 @@ const Testimonial = () => {
       "Joining in this Live session ....I have learnt to spend time with myself and relative my stress in a fraction of minute.. delighted to be a part of this class...",
   };
 
-  {/*                Profile pics state                 */ }
+  // {/*                Profile pics state                 */ }
   const [testimonials, setTestimonials] = useState([
     testi1,                                                     
     testi2,

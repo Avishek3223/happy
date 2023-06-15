@@ -8,6 +8,7 @@ import NamesPng from "../../Utils/images/PreviousSessions/names.png";
 import ClassTypePng from "../../Utils/images/PreviousSessions/classType.png";
 import TimePng from "../../Utils/images/PreviousSessions/time.png";
 import ZoomLinkPng from "../../Utils/images/PreviousSessions/zoomLink.png";
+import { Link } from "react-router-dom";
 
 const PreviousSessions = () => {
   const [classId, setClassId] = useState("");
@@ -235,9 +236,9 @@ const PreviousSessions = () => {
                   </p>
                   <div className="w-[7.3rem] mr-4   rounded px-2 bg-[#1b7571] max-h-[1.8rem] self-center flex justify-center items-center max536:mr-0 text-white">
                     {clas.recordingLink ? (
-                      <a href={clas.recordingLink} target={"_blank"}>
+                      <Link href={clas.recordingLink} target={"_blank"}>
                         link
-                      </a>
+                      </Link>
                     ) : (
                       <div>
                         {Ctx.userData.userType === "admin" ||

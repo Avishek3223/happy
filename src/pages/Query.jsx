@@ -5,7 +5,6 @@ import "../Components/comp/Query.css";
 import Footer from "../Components/Home/Footer";
 import NavBar from "../Components/NavBar";
 
-import query from "../Utils/Assests/query.png";
 import { useContext } from "react";
 import Context from "../Context/Context";
 import "./query.css";

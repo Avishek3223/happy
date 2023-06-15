@@ -1,5 +1,5 @@
 import { API } from "aws-amplify";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Context from "./Context";
 
 const ContextProvider = (props) => {
@@ -12,9 +12,9 @@ const ContextProvider = (props) => {
   const [loader, setLoader] = useState(false);
   const [isUserDataLoaded, setIsUserDataLoaded] = useState(false);
 
-  const onLoad = () => {
+  const onLoad = useCallback(() => {
     if (isAuth) {
-      API.get( "user", "/user/upcoming-schedule/happyprancer")
+      API.get("user", "/user/upcoming-schedule/happyprancer")
         .then((classes) => {
           setUpcomingClasses(classes);
         })
@@ -39,11 +39,11 @@ const ContextProvider = (props) => {
           setUserList([]);
         });
     }
-  };
+  }, [isAuth]);
 
   useEffect(() => {
     onLoad();
-  }, [isAuth]);
+  }, [isAuth, onLoad]);
 
   useEffect(() => {
     API.get("user", "/any/products/happyprancer")

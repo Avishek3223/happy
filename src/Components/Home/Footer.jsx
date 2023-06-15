@@ -1,21 +1,20 @@
 import logo from "../../Utils/Happy/images/logo.png";
 import facebook from "../../Utils/Assests/FB.png";
 import instagram from "../../Utils/Assests/INSTA.png";
-import youtube from "../../Utils/Assests/YOU.png";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 const Footer = (props) => {
   const Navigate = useNavigate();
-  const [content, setContent] = useState(props.initialContent);
+  // const [content, setContent] = useState();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [content]);
+  }, [props.initialContent]);
 
-  const handleContentChange = (event) => {
-    setContent(event.target.value);
-  };
+  // const handleContentChange = (event) => {
+  //   setContent(event.target.value);
+  // };
 
   return (
     <div>
@@ -40,20 +39,20 @@ const Footer = (props) => {
               >
                 Contact Us
               </p>
-              <a
+              <Link
                 className="cursor-pointer"
                 href="https://bworkzlive.com/"
                 target={"_blank"}
               >
                 BWorkz
-              </a>
-              <a
+              </Link>
+              <Link
                 className="cursor-pointer"
                 href="https://Zumba.com/"
                 target={"_blank"}
               >
                 Zumba
-              </a>
+              </Link>
               {/* <a
                 className="cursor-pointer"
                 href="https://youtube.com/@bworkzworkout2004"
@@ -185,7 +184,7 @@ const Footer = (props) => {
 
         <div className="py-[0.4rem] px-8 h-16 bg-[#225c59]">                                                                            {/* Social media Links  */}
            <div className="flex bg-black justify-between items-center w-[10%] min-w-[5rem] max-w-[7rem] rounded-2xl h-12 p-4">
-            <a
+            <Link
               href="https://instagram.com/HappyPrancer"
               target={"_blank"}
             >
@@ -194,8 +193,8 @@ const Footer = (props) => {
                 alt=""
                 className="hover:mr-2 hover:w-10 hover:h-10 w-8 h-8"
               />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.facebook.com/HappyPrancer"
               target={"_blank"}
             >
@@ -204,7 +203,7 @@ const Footer = (props) => {
                 alt=""
                 className="hover:mr-2 hover:w-10 hover:h-10 w-8 h-8"
               />
-            </a>
+            </Link>
             {/*  <a href="https://www.youtube.com/@amazonwebservices" target={"_blank"}>
               <img
                 src={youtube}

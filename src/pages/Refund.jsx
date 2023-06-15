@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Home/Footer";
 
@@ -10,7 +9,6 @@ const Terms = () => {
       <NavBar />
       <div className=" flex flex-col items-center  w-100 h-100 mt-[2rem] p-0 overflow-x-hidden w-[90vw] max-w-[80rem]">
         <h1 className=" text-[4rem] text-center max450:[1.2rem] font-bebas-neue">Cancellation/Refund Policy</h1>
-        <h4 className="text-[1rem] max450:text-[0.8rem] text-left mt-8 font-bold w-full "></h4>
         <p className="mt-8">
         Thank you for choosing Happyprancer for your virtual dance workout needs! 
         We are committed to providing you with the best experience possible. Please

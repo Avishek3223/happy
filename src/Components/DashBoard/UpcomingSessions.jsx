@@ -3,7 +3,7 @@ import whyImg from "../../Utils/Svg/why-bworkz-img.svg";
 // import Dashboard2Png from "../../Utils/Png/dashboard.png";
 import { BsFillPencilFill } from "react-icons/bs";
 import Context from "../../Context/Context";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { API } from "aws-amplify";
 
 const UpcomingSessions = () => {
@@ -263,13 +263,13 @@ const UpcomingSessions = () => {
                         minute: "2-digit",
                       })}
                     </p>
-                    <a
+                    <Link
                       className="px-2 bg-[#1b7571] max-h-[1.8rem] self-center ml-1 text-white"
                       href={clas.zoomLink}
                       target={"_blank"}
                     >
                       Join
-                    </a>
+                    </Link>
                     {(Ctx.userData.userType === "admin" ||
                       Ctx.userData.userType === "instructor") && (
                       <BsFillPencilFill

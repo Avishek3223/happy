@@ -1,6 +1,5 @@
 import React from "react";
 import Faq from "react-faq-component";
-import Container from "react-bootstrap/esm/Container";
 import "./FAQ.css";
 
 const data = {                                               

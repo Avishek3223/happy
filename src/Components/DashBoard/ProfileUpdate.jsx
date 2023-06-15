@@ -80,42 +80,42 @@ const ProfileUpdate = () => {
     }
   };
 
-  const passwordValidator = () => {
-    if (password.length < 8) {
-      setErr("Password is too Short");
-      return false;
-    } else if (password !== confirmPassword) {
-      setErr("Password Doesn't Match");
-      return false;
-    } else {
-      setErr("");
-      return true;
-    }
-  };
+  // const passwordValidator = () => {
+  //   if (password.length < 8) {
+  //     setErr("Password is too Short");
+  //     return false;
+  //   } else if (password !== confirmPassword) {
+  //     setErr("Password Doesn't Match");
+  //     return false;
+  //   } else {
+  //     setErr("");
+  //     return true;
+  //   }
+  // };
 
   const passwordVisibilityChange = () => {
     setPasswordVisible((i) => !i);
   };
 
-  const onPasswordChange = async (e) => {
-    e.preventDefault();
+  // const onPasswordChange = async (e) => {
+  //   e.preventDefault();
 
-    UtilCtx.setLoader(true);
-    if (passwordValidator()) {
-      try {
-        const currentUser = await Auth.currentAuthenticatedUser();
-        await Auth.changePassword(currentUser, oldPassword, password);
+  //   UtilCtx.setLoader(true);
+  //   if (passwordValidator()) {
+  //     try {
+  //       const currentUser = await Auth.currentAuthenticatedUser();
+  //       await Auth.changePassword(currentUser, oldPassword, password);
 
-        alert("Password Change");
-        setIsChangePassword(false);
-        UtilCtx.setLoader(false);
-      } catch (e) {
-        setErr(e.message);
-        UtilCtx.setLoader(false);
-      }
-    }
-    UtilCtx.setLoader(false);
-  };
+  //       alert("Password Change");
+  //       setIsChangePassword(false);
+  //       UtilCtx.setLoader(false);
+  //     } catch (e) {
+  //       setErr(e.message);
+  //       UtilCtx.setLoader(false);
+  //     }
+  //   }
+  //   UtilCtx.setLoader(false);
+  // };
 
   const onEmailChange = async (e) => {
     e.preventDefault();
@@ -132,32 +132,32 @@ const ProfileUpdate = () => {
     }
   };
 
-  const onEmailCodeConfirm = async (e) => {
-    e.preventDefault();
+  // const onEmailCodeConfirm = async (e) => {
+  //   e.preventDefault();
 
-    UtilCtx.setLoader(true);
-    if (emailCode.length !== 0) {
-      try {
-        await Auth.verifyCurrentUserAttributeSubmit("email", emailCode);
+  //   UtilCtx.setLoader(true);
+  //   if (emailCode.length !== 0) {
+  //     try {
+  //       await Auth.verifyCurrentUserAttributeSubmit("email", emailCode);
 
-        const userdata = await API.put("user", "/user/profile/happyprancer", {
-          body: {
-            emailId: email,
-            userName: UserCtx.userName,
-            phoneNumber: UserCtx.phoneNumber,
-          },
-        });
-        Ctx.setUserData(userdata.Attributes);
-        alert("Updated");
-        setIsEmailChange(false);
-        setIsEmailCode(false);
-        UtilCtx.setLoader(false);
-      } catch (e) {
-        setErr(e.message);
-      }
-    }
-    UtilCtx.setLoader(false);
-  };
+  //       const userdata = await API.put("user", "/user/profile/happyprancer", {
+  //         body: {
+  //           emailId: email,
+  //           userName: UserCtx.userName,
+  //           phoneNumber: UserCtx.phoneNumber,
+  //         },
+  //       });
+  //       Ctx.setUserData(userdata.Attributes);
+  //       alert("Updated");
+  //       setIsEmailChange(false);
+  //       setIsEmailCode(false);
+  //       UtilCtx.setLoader(false);
+  //     } catch (e) {
+  //       setErr(e.message);
+  //     }
+  //   }
+  //   UtilCtx.setLoader(false);
+  // };
 
   return (
     <div className="w-[100%] flex flex-col items-center pt-6  ">

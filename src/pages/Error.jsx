@@ -1,4 +1,3 @@
-import react from 'react';
 import Nav from '../Components/NavBar';
 
 const Error = () =>{
