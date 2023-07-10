@@ -128,13 +128,17 @@ const SignUp = () => {
       UtilCtx.setLoader(false);
       alert("Signed Up");
       if (userdata.status === "Active") {
+        UtilCtx.setLoader(false);
         Navigate("/dashboard");
       }
+      UtilCtx.setLoader(false);
       Navigate("/subscription");
     } catch (error) {
       UtilCtx.setLoader(false);
       console.log("Error:", error.message);
       throw error;
+    }finally{
+      UtilCtx.setLoader(false);
     }
   };
 
@@ -156,6 +160,7 @@ const SignUp = () => {
         });
         setNewUser(newUserCheck);
       }
+      UtilCtx.setLoader(false);
     } catch (e) {
       setErr(e.message);
       UtilCtx.setLoader(false);
@@ -193,6 +198,7 @@ const SignUp = () => {
       } else {
         UtilCtx.setLoader(false);
       }
+      UtilCtx.setLoader(false);
     } catch (e) {
       setErr(e.message);
       UtilCtx.setLoader(false);
