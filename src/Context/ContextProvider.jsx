@@ -1,103 +1,127 @@
 import { API } from "aws-amplify";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import Context from "./Context";
 
 const ContextProvider = (props) => {
   const [isAuth, setIsAuth] = useState(false);
   const [userData, setUserData] = useState({});
+  const [loader, setLoader] = useState(false);
   const [upcomingClasses, setUpcomingClasses] = useState([]);
   const [previousClasses, setPreviousClasses] = useState([]);
   const [userList, setUserList] = useState([]);
   const [productList, setProductList] = useState([]);
-  const [loader, setLoader] = useState(false);
-  const [isUserDataLoaded, setIsUserDataLoaded] = useState(false);
 
-  const onLoad = () => {
-    if (isAuth) {
-      API.get( "user", "/user/upcoming-schedule/happyprancer")
-        .then((classes) => {
-          setUpcomingClasses(classes);
-        })
-        .catch((e) => {
-          setUpcomingClasses([]);
-          console.log(e);
-        });
-      API.get("user", "/user/previous-schedule/happyprancer")
-        .then((classes) => {
-          setPreviousClasses(classes);
-        })
-        .catch((e) => {
-          setPreviousClasses([]);
-          console.log(e);
-        });
-      API.get("user", "/admin/profile-list/happyprancer")
-        .then((list) => {
-          setUserList(list);
-        })
-        .catch((e) => {
-          console.log(e);
-          setUserList([]);
-        });
-    }
-  };
 
-  useEffect(() => {
-    onLoad();
-  }, [isAuth]);
+useEffect(() => {
+  if (isAuth) {
+    const onLoad = async () => {
+      try {
+        const classes = await API.get("user", "/user/upcoming-schedule/happyprancer");
+        setUpcomingClasses(classes);
+      } catch (e) {
+        setUpcomingClasses([]);
+        console.log(e);
+      }
 
-  useEffect(() => {
-    API.get("user", "/any/products/happyprancer")
-      .then((list) => {
-        console.log(list);
-        setProductList(list);
-      })
-      .catch((e) => {
+      try {
+        const classes = await API.get("user", "/user/previous-schedule/happyprancer");
+        setPreviousClasses(classes);
+      } catch (e) {
+        setPreviousClasses([]);
+        console.log(e);
+      }
+
+      try {
+        const list = await API.get("user", "/admin/profile-list/happyprancer");
+        setUserList(list);
+      } catch (e) {
         console.log(e);
         setUserList([]);
-      });
-  }, []);
+      }
+    };
 
-  const setIsAuthFn = (data) => {
-    setIsAuth(data);
-  };
+    onLoad();
+  }
+}, [isAuth]);
 
-  const setUserDataFn = (data) => {
-    setUserData(data);
-  };
+useEffect(() => {
+  API.get("user", "/any/products/happyprancer")
+    .then((list) => {
+      console.log(list);
+      setProductList(list);
+    })
+    .catch((e) => {
+      console.log(e);
+      setUserList([]);
+    });
+}, []);
 
-  const setLoaderFn = (data) => {
-    setLoader(data);
-  };
-
-  const setIsUserDataLoadedFn = (data) => {
-    setIsUserDataLoaded(data);
-  };
-
-  const ContextData = {
-    isAuth: isAuth,
-    setIsAuth: setIsAuthFn,
-    userData: userData,
-    setUserData: setUserDataFn,
-    isUserDataLoaded: isUserDataLoaded,
-    setIsUserDataLoaded: setIsUserDataLoadedFn,
-    util: {
-      loader: loader,
-      setLoader: setLoaderFn,
-    },
-    upcomingClasses: upcomingClasses,
-    setUpcomingClasses: () => {},
-    previousClasses: previousClasses,
-    setPreviousClasses: () => {},
-    userList: userList,
-    setUserList: () => {},
-    productList: productList,
-    setProductList: () => {},
-    reloadClasses: onLoad,
-  };
-
-  return (
-    <Context.Provider value={ContextData}>{props.children}</Context.Provider>
-  );
+const setIsAuthFn = (data) => {
+  setIsAuth(data);
 };
 
-export default ContextProvider;
+const setUserDataFn = (data) => {
+  setUserData(data);
+};
+
+const setLoaderFn = (data) => {
+  setLoader(data);
+};
+
+const setUpcomingClassesFn = (classes) => {
+  setUpcomingClasses(classes);
+};
+
+const setPreviousClassesFn = (classes) => {
+  setPreviousClasses(classes);
+};
+
+const setUserListFn = (list) => {
+  setUserList(list);
+};
+
+const checkSubscriptionStatus = useMemo(() => {
+  if (userData && userData.userType) {
+    const subscriptionType = userData.userType;
+    const subscriptionStatus = userData.status;
+    console.log("Subscription Type:", subscriptionType);
+    if (subscriptionType === "admin") {
+      return { borderColor: "green" };
+    } else if (subscriptionType === "instructor") {
+      return { borderColor: "blue" };
+    } else if ((subscriptionType === "member") && (subscriptionStatus === "Active")) {
+      return { borderColor: "#FFC73B" };
+    }
+  }
+  // Return the default style for non-admin and non-active accounts
+  return { borderColor: "red" };
+}, [userData]);
+
+
+
+const ContextData = {
+  isAuth: isAuth,
+  setIsAuth: setIsAuthFn,
+  userData: userData,
+  setUserData: setUserDataFn,
+  util: {
+    loader: loader,
+    setLoader: setLoaderFn,
+  },
+  upcomingClasses: upcomingClasses,
+  setUpcomingClasses: setUpcomingClassesFn,
+  previousClasses: previousClasses,
+  setPreviousClasses: setPreviousClassesFn,
+  userList: userList,
+  setUserList: setUserListFn,
+  productList: productList,
+  setProductList: () => { },
+  checkSubscriptionStatus: checkSubscriptionStatus,
+};
+
+return (
+  <Context.Provider value={ContextData}>{props.children}</Context.Provider>
+);
+};
+
+export { ContextProvider };

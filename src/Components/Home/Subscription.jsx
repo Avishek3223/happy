@@ -10,6 +10,7 @@ export default function Subscription() {
   const UserCtx = useContext(Context).userData;
 
   const Navigate = useNavigate();
+  console.log(Ctx.productList)
 
   return (
     <>
@@ -21,7 +22,7 @@ export default function Subscription() {
         <ul className="flex flex-wrap justify-center w-[90vw] max-w-[80rem] gap-28 ">
           {Ctx.productList.map((item) => {
             return (
-              <li className="bg-white w-[24rem] h-[40rem] p-10 rounded-[2rem] z-0  flex flex-col items-center gap-8 shadowSubscribe   max450:w-[90vw] max450:gap-4 max450:text-[1rem] max450:min-h-[28rem] max450:h-auto max450:p-12 border-[#225c59] border-[0.1rem]">
+              <li key={item.productId} className="bg-white w-[24rem] h-[40rem] p-10 rounded-[2rem] z-0  flex flex-col items-center gap-8 shadowSubscribe   max450:w-[90vw] max450:gap-4 max450:text-[1rem] max450:min-h-[28rem] max450:h-auto max450:p-12 border-[#225c59] border-[0.1rem]">
                 <p className="text-[1.6rem]">{item.heading}</p>
                 <p className="overflow-hidden text-[1rem]">
                   {item.description}
@@ -42,11 +43,11 @@ export default function Subscription() {
                       <>
                         {item.currency === "INR"
                           ? item.durationText === "Month" && (
-                              <HappyprancerRazorpayMonthly />
-                            )
+                            <HappyprancerRazorpayMonthly />
+                          )
                           : item.durationText === "Month" && (
-                              <HappyprancerPaypalMonthly />
-                            )}
+                            <HappyprancerPaypalMonthly />
+                          )}
                       </>
                     )}
                   </div>
