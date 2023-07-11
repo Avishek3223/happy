@@ -46,7 +46,7 @@ const Header3 = () => {
             />
             <h5>Personal & Group Exercise</h5>
             <p className="text-center">
-              Personal (person-to-person trainer based) and Group exercies with
+              Personal (person-to-person trainer based) and Group exercise with
               friends
             </p>
           </li>
