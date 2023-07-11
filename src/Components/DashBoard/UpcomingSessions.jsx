@@ -418,7 +418,7 @@ const UpcomingSessions = () => {
                     );
                   })}
                   </div>
-            <div className=" absolute bottom-4  ">
+            <div className=" flex items-end justify-end  ">
             <Pagination
                 count={totalPages}
                 page={currentPage}
