@@ -90,7 +90,7 @@ const checkSubscriptionStatus = useMemo(() => {
     } else if (subscriptionType === "instructor") {
       return { borderColor: "blue" };
     } else if ((subscriptionType === "member") && (subscriptionStatus === "Active")) {
-      return { borderColor: "#FFC73B" };
+      return { borderColor: "#1b7571" };
     }
   }
   // Return the default style for non-admin and non-active accounts
