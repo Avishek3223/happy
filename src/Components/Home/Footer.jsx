@@ -39,14 +39,14 @@ const Footer = (props) => {
               >
                 Contact Us
               </p>
-              <Link
+              <a
                 className="cursor-pointer"
                 href="https://bworkzlive.com/"
                 target={"_blank"}
                 rel="noreferrer"
               >
                 BWorkz
-              </Link>
+              </a>
               <a
                 className="cursor-pointer"
                 href="https://Zumba.com/"

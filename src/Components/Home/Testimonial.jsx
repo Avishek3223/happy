@@ -21,7 +21,7 @@ const Testimonial = () => {
     src: BapujiPng,
     name: "Bapuji Mallik",
     description:
-      "If you're new to exercise, you aren't sure what types of exercise you like, or you feel intimidated when walking into a new workout environment, online training is an excellent reprieve from the traditional gym or studio.According to me dance is the best fitness and workout where you never get bored,dance is the fun way to express yourself so yes this platform will give you such experience. Every session is mind blowing. Quality is awesome. Trainers are best.It is easy to learn for from  beginners to advanced. Motivation by the trainers and their coaching can't be described by words.trainers are really comes with utmost positivity throughout the session.its been a good journey with happyprancers.\nThank you happyprancer",
+      "If you're new to exercise, you aren't sure what types of exercise you like, or you feel intimidated when walking into a new workout environment, online training is an excellent reprieve from the traditional gym or studio.According to me dance is the best fitness and workout where you never get bored,dance is the fun way to express yourself so yes this platform will give you such experience. Every session is mind blowing. Quality is awesome. Trainers are best.It is easy to learn for from  beginners to advanced. Motivation by the trainers and their coaching can't be described by words.Trainers are really comes with utmost positivity throughout the session.its been a good journey with happyprancers.\nThank you happyprancer",
   };
   const testi3 = {
     src: PriyankaPng,
