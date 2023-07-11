@@ -20,39 +20,24 @@ const ProfileUpdate = () => {
   const [isEmailChange, setIsEmailChange] = useState(false);
   const [isEmailCode, setIsEmailCode] = useState(false);
   const [err, setErr] = useState("");
-  
 
-  // const ifDateChanged = () => {
-  //   if (
-  //     name &&
-  //     name.trim() === UserCtx.userName.trim() &&
-  //     phoneNumber &&
-  //     phoneNumber.trim() === UserCtx.phoneNumber
-  //   ) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // };
-
-  const validate = () => {
-    if (name.trim().length === 0) {
-      alert("Name is Mandatory");
+  const ifDateChanged = () => {
+    if (
+      name.trim() === UserCtx.userName.trim() &&
+      phoneNumber.trim() === UserCtx.phoneNumber
+    ) {
       return false;
-    } else if (phoneNumber.trim().length < 10) {
-      alert("Enter a Valid Phone Number");
-      return false;
+    } else {
+      return true;
     }
-    return true;
-  }
-
+  };
 
   const onProfileUpdate = async (e) => {
     e.preventDefault();
 
     UtilCtx.setLoader(true);
-    if (validate()) {
-      if (phoneNumber && phoneNumber.length >= 10) {
+    if (ifDateChanged()) {
+      if (phoneNumber.length >= 10) {
         try {
           const userdata = await API.put("user", "/user/profile/happyprancer", {
             body: {
@@ -75,47 +60,47 @@ const ProfileUpdate = () => {
         UtilCtx.setLoader(false);
       }
     } else {
-      // alert("Nothing is to be changed");
+      alert("Nothing is to be changed");
       UtilCtx.setLoader(false);
     }
   };
 
-  // const passwordValidator = () => {
-  //   if (password.length < 8) {
-  //     setErr("Password is too Short");
-  //     return false;
-  //   } else if (password !== confirmPassword) {
-  //     setErr("Password Doesn't Match");
-  //     return false;
-  //   } else {
-  //     setErr("");
-  //     return true;
-  //   }
-  // };
+  const passwordValidator = () => {
+    if (password.length < 8) {
+      setErr("Password is too Short");
+      return false;
+    } else if (password !== confirmPassword) {
+      setErr("Password Doesn't Match");
+      return false;
+    } else {
+      setErr("");
+      return true;
+    }
+  };
 
   const passwordVisibilityChange = () => {
     setPasswordVisible((i) => !i);
   };
 
-  // const onPasswordChange = async (e) => {
-  //   e.preventDefault();
+  const onPasswordChange = async (e) => {
+    e.preventDefault();
 
-  //   UtilCtx.setLoader(true);
-  //   if (passwordValidator()) {
-  //     try {
-  //       const currentUser = await Auth.currentAuthenticatedUser();
-  //       await Auth.changePassword(currentUser, oldPassword, password);
+    UtilCtx.setLoader(true);
+    if (passwordValidator()) {
+      try {
+        const currentUser = await Auth.currentAuthenticatedUser();
+        await Auth.changePassword(currentUser, oldPassword, password);
 
-  //       alert("Password Change");
-  //       setIsChangePassword(false);
-  //       UtilCtx.setLoader(false);
-  //     } catch (e) {
-  //       setErr(e.message);
-  //       UtilCtx.setLoader(false);
-  //     }
-  //   }
-  //   UtilCtx.setLoader(false);
-  // };
+        alert("Password Change");
+        setIsChangePassword(false);
+        UtilCtx.setLoader(false);
+      } catch (e) {
+        setErr(e.message);
+        UtilCtx.setLoader(false);
+      }
+    }
+    UtilCtx.setLoader(false);
+  };
 
   const onEmailChange = async (e) => {
     e.preventDefault();
@@ -132,36 +117,36 @@ const ProfileUpdate = () => {
     }
   };
 
-  // const onEmailCodeConfirm = async (e) => {
-  //   e.preventDefault();
+  const onEmailCodeConfirm = async (e) => {
+    e.preventDefault();
 
-  //   UtilCtx.setLoader(true);
-  //   if (emailCode.length !== 0) {
-  //     try {
-  //       await Auth.verifyCurrentUserAttributeSubmit("email", emailCode);
+    UtilCtx.setLoader(true);
+    if (emailCode.length !== 0) {
+      try {
+        await Auth.verifyCurrentUserAttributeSubmit("email", emailCode);
 
-  //       const userdata = await API.put("user", "/user/profile/happyprancer", {
-  //         body: {
-  //           emailId: email,
-  //           userName: UserCtx.userName,
-  //           phoneNumber: UserCtx.phoneNumber,
-  //         },
-  //       });
-  //       Ctx.setUserData(userdata.Attributes);
-  //       alert("Updated");
-  //       setIsEmailChange(false);
-  //       setIsEmailCode(false);
-  //       UtilCtx.setLoader(false);
-  //     } catch (e) {
-  //       setErr(e.message);
-  //     }
-  //   }
-  //   UtilCtx.setLoader(false);
-  // };
+        const userdata = await API.put("user", "/user/profile/happyprancer", {
+          body: {
+            emailId: email,
+            userName: UserCtx.userName,
+            phoneNumber: UserCtx.phoneNumber,
+          },
+        });
+        Ctx.setUserData(userdata.Attributes);
+        alert("Updated");
+        setIsEmailChange(false);
+        setIsEmailCode(false);
+        UtilCtx.setLoader(false);
+      } catch (e) {
+        setErr(e.message);
+      }
+    }
+    UtilCtx.setLoader(false);
+  };
 
   return (
-    <div className="w-[100%] flex flex-col items-center pt-6  ">
-      <div className="w-[75%] max-w-[36rem] bg-[#eceaeae1]  rounded-3xl p-3 flex flex-col items-center max536:w-[90%]">
+    <div className="w-[calc(100vw-16rem)] max1050:w-screen flex flex-col items-center pt-6  ">
+      <div className="w-[75%] max1050:w-[100%] max-w-[36rem] bg-[#eceaeae1]  rounded-3xl p-3 flex flex-col items-center max536:w-[90%]">
         {!isEmailChange ? (
           <>
             {!isChangePassword ? (
@@ -176,7 +161,7 @@ const ProfileUpdate = () => {
                     <li className="flex flex-col gap-1">
                       <label className="RussoOne ml-2">Name</label>
                       <input
-                        className="bg-[#d9d9d981] text-[#0008] RussoOne px-4 py-2 rounded-lg"
+                        className="bg-[#c2bfbf81] text-[#0008] RussoOne px-4 py-2 rounded-lg"
                         type={"text"}
                         value={name}
                         onChange={(e) => {
@@ -187,8 +172,8 @@ const ProfileUpdate = () => {
                     <li className="flex flex-col gap-1">
                       <label className="RussoOne ml-2">Phone Number</label>
                       <input
-                        className="bg-[#d9d9d981] text-[#0008] RussoOne px-4 py-2 rounded-lg"
-                        type={"number"}
+                        className="bg-[#c2bfbf81] text-[#0008] RussoOne px-4 py-2 rounded-lg"
+                        type={"text"}
                         value={phoneNumber}
                         onChange={(e) => {
                           setPhoneNumber(e.target.value);
@@ -197,33 +182,29 @@ const ProfileUpdate = () => {
                     </li>
                   </ul>
                   <button
-                    className="RussoOne bg-[#d9d9d981] rounded-lg py-2 "
+                    className="RussoOne bg-[#c2bfbf81] rounded-lg py-2 "
                     onClick={(e) => {
                       e.preventDefault();
                       setErr("");
                       setIsEmailChange(true);
                     }}
-                    type="Button"
                   >
                     Change Email
                   </button>
                   <button
-                    className="RussoOne bg-[#d9d9d981] rounded-lg py-2 "
+                    className="RussoOne bg-[#c2bfbf81] rounded-lg py-2 "
                     onClick={(e) => {
                       e.preventDefault();
                       setErr("");
                       setIsChangePassword(true);
                     }}
-                    type="Button"
                   >
                     Change Password
                   </button>
                   <div className="flex justify-center">
-                    
                     <button
                       className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 "
                       onClick={onProfileUpdate}
-                      type="submit"
                     >
                       Confirm
                     </button>
@@ -238,7 +219,7 @@ const ProfileUpdate = () => {
                     <li className="flex items-center gap-20 mt-6 max536:flex-col max536:gap-2 max536:items-start">
                       <label className="w-20  max536:ml-2">Old Password</label>
                       <input
-                        className="bg-[#d9d9d981] text-[#0008] RussoOne px-4 py-2 rounded-lg"
+                        className="bg-[#c2bfbf81] text-[#0008] RussoOne px-4 py-2 rounded-lg"
                         value={oldPassword}
                         onChange={(e) => {
                           setOldPassword(e.target.value);
@@ -248,7 +229,7 @@ const ProfileUpdate = () => {
                     <li className="flex items-center gap-20 mt-6 max536:flex-col max536:gap-2 max536:items-start">
                       <label className="w-20 max536:ml-2">Password</label>
                       <input
-                        className="bg-[#d9d9d981] text-[#0008] RussoOne px-4 py-2 rounded-lg"
+                        className="bg-[#c2bfbf81] text-[#0008] RussoOne px-4 py-2 rounded-lg"
                         type={"password"}
                         value={password}
                         onChange={(e) => {
@@ -261,7 +242,7 @@ const ProfileUpdate = () => {
                         Confirm Password
                       </label>
                       <input
-                        className="bg-[#d9d9d981] text-[#0008] RussoOne px-4 py-2 rounded-lg"
+                        className="bg-[#c2bfbf81] text-[#0008] RussoOne px-4 py-2 rounded-lg"
                         type={!passwordVisible && "password"}
                         value={confirmPassword}
                         onChange={(e) => {
@@ -286,7 +267,6 @@ const ProfileUpdate = () => {
                   {err && (
                     <p className="text-[0.8rem] mt-2 text-red-500">{err}</p>
                   )}
-                  
                   <div className="flex gap-5">
                     <button
                       className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
@@ -301,7 +281,7 @@ const ProfileUpdate = () => {
                     </button>
                       
                     <button
-                      onClick={onEmailChange}
+                      onClick={onPasswordChange}
                       className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
                       type="submit"
                     >
@@ -323,7 +303,7 @@ const ProfileUpdate = () => {
                     <li className="flex items-center gap-20 mt-5 max536:flex-col max536:gap-2 max536:items-start">
                       <label className="w-20">New Email</label>
                       <input
-                        className="bg-[#d9d9d981] text-[#0008] RussoOne px-4 py-2 rounded-lg"
+                        className="bg-[#c2bfbf81] text-[#0008] RussoOne px-4 py-2 rounded-lg"
                         value={email}
                         onChange={(e) => {
                           setEmail(e.target.value);
@@ -334,7 +314,7 @@ const ProfileUpdate = () => {
                   {err && (
                     <p className="text-[0.8rem] mt-2 text-red-500">{err}</p>
                   )}
-                    <div className="flex gap-5">
+                  <div className="flex gap-5">
                     <button
                       className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
                       onClick={(e) => {
@@ -367,7 +347,7 @@ const ProfileUpdate = () => {
                     <li className="flex items-center gap-20 mt-5 max536:flex-col max536:gap-2 max536:items-start">
                       <label className="w-20">Code</label>
                       <input
-                        className="bg-[#d9d9d981] text-[#0008] RussoOne px-4 py-2 rounded-lg"
+                        className="bg-[#c2bfbf81] text-[#0008] RussoOne px-4 py-2 rounded-lg"
                         value={emailCode}
                         onChange={(e) => {
                           setEmailCode(e.target.value);
@@ -392,7 +372,7 @@ const ProfileUpdate = () => {
                     </button>
                       
                     <button
-                      onClick={onEmailChange}
+                      onClick={onEmailCodeConfirm}
                       className="RussoOne bg-[#1b7571] rounded-lg w-[8rem] text-white py-2 mt-8 "
                       type="submit"
                     >

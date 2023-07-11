@@ -19,6 +19,7 @@ module.exports = {
         max600: { max: "600px" },
         min600: { min: "600px" },
         max1050: { max: "1050px" },
+        max1350: { max: "1350px" },
         max1250: { max: "1250px" },
         max1920: { max: "1920px" },
         max1078: { max: "1078px" },

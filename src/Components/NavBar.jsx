@@ -76,7 +76,7 @@ const NavBar = () => {
                 }}
                 className="cursor-pointer overflow-hidden  max800:hidden w-[10rem] text-center mr-10  p-2 py-1 border-solid border-2 border-[#1b7571] rounded-md "
               >
-                {UserCtx.userData.userName}
+                {UserCtx.userData.userName.split(" ")[0]}
               </p>
             ) : (
               <button
@@ -141,7 +141,7 @@ const NavBar = () => {
                     Navigate("/dashboard");
                   }}
                 >
-                  {UserCtx.userData.userName}
+                  {UserCtx.userData.userName.split(" ")[0]}
                 </li>
               ) : (
                 <li
@@ -235,7 +235,7 @@ const NavBar = () => {
                       Navigate("/dashboard");
                     }}
                   >
-                    {UserCtx.userData.userName}
+                    {UserCtx.userData.userName.split(" ")[0]}
                   </li>
                 ) : (
                   <li

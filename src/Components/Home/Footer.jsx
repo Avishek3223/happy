@@ -19,18 +19,18 @@ const Footer = (props) => {
   return (
     <div>
       <div className="bg-black ">
-        <div className="flex flex-wrap justify-between p-12 gap-6 max1008:justify-center ">
+        <div className="flex flex-wrap justify-between max600:flex-col max600:justify-center p-12 gap-6 max1358:justify-center ">
           <div className="mb-5">
-            <a href="/" className="transition duration-200">
+            <a href="/" className="transition duration-200 flex justify-center">
               <img className="w-[15rem]" src={logo} alt="" />                                     {/* Logo  */}
             </a>
           </div>
 
           <ul className=" flex gap-32 max950:gap-16 text-white flex-wrap max1050:justify-center ">           {/* Quick Links  */}
             <li className="RussoOne flex flex-col gap-4 items-center text-cente ">
-              <h2 className="">Usefull Links</h2>                    
+              <h2 className="">Usefull Links</h2>
               <hr className="w-[100%] text-white " />
-              
+
               <p
                 className="cursor-pointer"
                 onClick={() => {
@@ -43,178 +43,54 @@ const Footer = (props) => {
                 className="cursor-pointer"
                 href="https://bworkzlive.com/"
                 target={"_blank"}
+                rel="noreferrer"
               >
                 BWorkz
               </Link>
-              <Link
+              <a
                 className="cursor-pointer"
                 href="https://Zumba.com/"
                 target={"_blank"}
+                rel="noreferrer"
               >
                 Zumba
-              </Link>
-              {/* <a
-                className="cursor-pointer"
-                href="https://youtube.com/@bworkzworkout2004"
-                target={"_blank"}
-              >
-                Youtube
-              </a> */}
+              </a>
+
             </li>
 
-            {/* <li className="RussoOne flex flex-col gap-4 items-center text-center">
-              <h2>Useful Links</h2>
-              <hr className="w-[100%] text-white " />
-              <a
-                className="cursor-pointer"
-                href="https://s3-us-east-2.amazonaws.com/happyprancerdocuments/brochure.pdf"
-                target={"_blank"}
-              >
-                Instructor Brochure
-              </a>
-              <a
-                className="cursor-pointer"
-                href="https://forms.gle/ahVeu2pSjJdWbADVA
-              "
-                target={"_blank"}
-              >
-                Instructor Application
-              </a>
-              <a
-                className="cursor-pointer"
-                href="https://anupamz.com/"
-                target={"_blank"}
-              >
-                AnupamZ
-              </a>
-              <a
-                className="cursor-pointer"
-                href="https://www.acefitness.org/"
-                target={"_blank"}
-              >
-                ACE
-              </a>
-              <p
-                className="cursor-pointer"
-                onClick={() => {
-                  Navigate("/");
-                }}
-              >
-                Instructor Training
-              </p>
-              <p
-                className="cursor-pointer"
-                onClick={() => {
-                  Navigate("/");
-                }}
-              >
-                Workshop
-              </p>
-              <p
-                className="cursor-pointer"
-                onClick={() => {
-                  Navigate("/");
-                }}
-              >
-                Group Video
-              </p>
-              <p
-                className="cursor-pointer"
-                onClick={() => {
-                  Navigate("/");
-                }}
-              >
-                Gym classes
-              </p>
-            </li> */}
 
-         {/*   <li className="RussoOne flex flex-col gap-4 items-center text-center">
-              <h2>Affiliated Gyms</h2>
-              <hr className="w-[100%] text-white " />
-              {/* <p
-                className="cursor-pointer"
-                onClick={() => {
-                  Navigate("/aboutus");
-                }}
-              >
-                More Workout and less Dance
-              </p>
-              <p
-                className="cursor-pointer"
-                onClick={() => {
-                  Navigate("/");
-                }}
-              >
-                Online Instructor Training
-              </p>
-              <p
-                className="cursor-pointer"
-                onClick={() => {
-                  Navigate("/");
-                }}
-              >
-                Online Free Jam Sessinons
-              </p>
-              <p
-                className="cursor-pointer"
-                onClick={() => {
-                  Navigate("/");
-                }}
-              >
-                Online Free Choreography
-              </p>
-              <p
-                className="cursor-pointer"
-                onClick={() => {
-                  Navigate("/");
-                }}
-              >
-                Community Support
-              </p> 
-              <a
-                className="cursor-pointer"
-                href="https://bworkzlive.com/"
-                target={"_blank"}
-              >
-                BWorkz
-              </a>
-            </li>        */}
           </ul>
         </div>
 
-        <div className="py-[0.4rem] px-8 h-16 bg-[#225c59]">                                                                            {/* Social media Links  */}
-           <div className="flex bg-black justify-between items-center w-[10%] min-w-[5rem] max-w-[7rem] rounded-2xl h-12 p-4">
-            <Link
+        <div className=" h-16 bg-[#225c59] flex w-full items-center justify-start px-[2rem]">                                                                            {/* Social media Links  */}
+          <div className="flex  bg-black justify-between  items-center w-[7rem]  rounded-2xl h-12 p-4">
+            <a
               href="https://instagram.com/HappyPrancer"
               target={"_blank"}
+              rel="noreferrer"
             >
               <img
                 src={instagram}
                 alt=""
                 className="hover:mr-2 hover:w-10 hover:h-10 w-8 h-8"
               />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.facebook.com/HappyPrancer"
               target={"_blank"}
+              rel="noreferrer"
             >
               <img
                 src={facebook}
                 alt=""
                 className="hover:mr-2 hover:w-10 hover:h-10 w-8 h-8"
               />
-            </Link>
-            {/*  <a href="https://www.youtube.com/@amazonwebservices" target={"_blank"}>
-              <img
-                src={youtube}
-                alt=""
-                className="hover:mr-1 hover:w-10 hover:h-10 w-8 h-8"
-            /> 
-            </a>     */}
-          </div> 
+            </a>
+
+          </div>
         </div>
 
-        <div className=" p-4 flex justify-center text-white gap-2 font-poppins max406:flex-col max406:text-center ">        {/*      Policy Links      */}
+        <div className=" p-4 flex justify-center text-white gap-2 font-poppins max536:flex-col max536:text-center ">        {/*      Policy Links      */}
           <Link to={"/privacypolicy"}> Privacy Policy</Link>
           <div className="bg-[#225c59] w-1 border-white rounded-md"></div>
           <Link to={"/terms"}> Terms and Condition </Link>

@@ -1,14 +1,23 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import Context from "../../Context/Context";
 
 import UserNamePng from "../../Utils/images/UsersList/userName.png";
 import DetailsPng from "../../Utils/images/UsersList/details.png";
 import DuePng from "../../Utils/images/UsersList/due.png";
 import AttendancePng from "../../Utils/images/UsersList/attendance.png";
+import Pagination from "@mui/material/Pagination";
 
 const UsersList = () => {
   const Ctx = useContext(Context);
+
+  const itemsPerPage = 10; // Set the desired number of items per page
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(Ctx.upcomingClasses.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+
 
   return (
     <div className="w-[100%] flex flex-col items-center pt-6 max536:pt-0 gap-10">
@@ -16,51 +25,12 @@ const UsersList = () => {
         className={`w-[90%] bg-[#e1faf9] max536:bg-transparent max536:w-[100%]
         } rounded-3xl p-3 flex flex-col items-center max1050:w-[94vw]`}
       >
-        {/* <div className=" mt-6 w-[96%]  flex items-start overflow-auto">
-          <table className="p-2 text-gray-500 ">
-            <thead>
-              <tr className="py-2 ">
-                <th className="w-[14rem]">Names</th>
-                <th className="w-[9rem] max700:hidden">Emails</th>
-                <th className="w-[9rem] max700:hidden">Phone</th>
-                <th className="w-[7rem] ">Attendance</th>
-                <th className="w-[7rem] ">Renew Date</th>
-                <th className="w-[7rem] ">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Ctx.userList.map((user, i) => {
-                return (
-                  <tr className={``} key={user.cognitoId}>
-                    <td className="w-[14rem] overflow-hidden flex items-center h-10">
-                      <p className="text-left">{user.userName}</p>
-                    </td>
-                    <td className="mr-3 w-[20rem] text-left max700:hidden">
-                      {user.emailId}
-                    </td>
-                    <td className="mr-3 w-[7rem] text-center max700:hidden">
-                      {user.phoneNumber}
-                    </td>
-                    <td className="text-center">
-                    <p>5</p>
-                    </td>
-                    <td className="text-center">
-                      <p>{new Date(Date.now()).toLocaleDateString("en-us")}</p>
-                    </td>
-                    <td className="text-center">
-                    <p>{user.status ? "Active" : "Inactive"}</p>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-            </table>
-          </div> */}
-        <h2 className="pl-5 text-[1.4rem] max536:mb-3 max536:text-[1.7rem] RussoOne font-thin max536:text-[#1b7571]">
+        
+        <h2 className="pl-5 text-[1.4rem] max536:mb-3 max536:text-[1.7rem] RussoOne font-thin max536:text-[bg-[#1b7571]]">
           Members List
         </h2>
-        <ul className="w-[100%] h-[calc(100vh-10rem)] flex flex-col  max536:bg-[#eceaeaa1] rounded-3xl items-center justify-start pt-6 max536:gap-3 max536:h-[calc(100vh-16rem)] max536:bg-gradient-to-b max536:from-[#dad7c6] max536:to-[#fdd00891]">
-          <li
+        <ul className="relative pb-[3rem] w-[100%] h-[calc(100vh-14rem)] flex flex-col  max536:bg-[#1b7571] rounded-3xl items-center justify-start pt-6 max536:gap-3 max536:h-[calc(100vh-16rem)] max536:bg-gradient-to-b max536:from-[#dad7c6] max536:to-[#fdd00891]">
+        <li
             className={`w-[100%] flex flex-col items-center justify-center p-2  max536:pt-5 max536:rounded-2xl`}
           >
             <div className="flex w-[96%] max1050:w-[100%] justify-between  mb-3 font-bold">
@@ -93,11 +63,13 @@ const UsersList = () => {
             </div>
           </li>
           <div className="overflow-auto max536:w-[96%] flex flex-col gap-4 w-[100%]">
-            {Ctx.userList.map((user, i) => {
+          {Ctx.userList
+            .slice(startIndex, endIndex)
+            .map((user, i) => {
               return (
                 <li
                   key={user.cognitoId}
-                  className={`w-[100%] flex flex-col items-center justify-center p-2 max536:bg-[#eceaeaa1]  max536:pt-6 max536:rounded-2xl Sansita max536:text-[0.8rem]`}
+                  className={`w-[100%] flex flex-col items-center justify-center p-2 max536:bg-[#1b7571]  max536:pt-6 max536:rounded-2xl Sansita max536:text-[0.8rem]`}
                 >
                   <div className="flex w-[96%] max1050:w-[100%] justify-between max1050:justify-between mb-5 relative">
                     <p className="w-[20%] overflow-auto">{user.userName}</p>
@@ -112,21 +84,31 @@ const UsersList = () => {
                     </p>
                     <p className="overflow-hidden w-[3.7rem]  ">
                       {user.currentMonthZPoints
-                        ? user.lastMonthZPoints
-                        : 0 + "/" + user.lastMonthZPoints}
+                        ? user.currentMonthZPoints
+                        : 0 +
+                          "/" +
+                          (user.lastMonthZPoints ? user.lastMonthZPoints : 0)}
                     </p>
-                    <p className="w-[3.4rem] mr-4   rounded px-2 bg-[] max-h-[1.8rem] self-center flex justify-center items-center max536:mr-0">
+                    <p className="w-[3.4rem] mr-4   rounded px-2 bg-[#1b7571] max-h-[1.8rem] self-center flex justify-center items-center max536:mr-0">
                       {/* {new Date(user.date).toLocaleDateString("en-us", {
                       day: "2-digit",
                       month: "2-digit",
                     })} */}
-                      {user.balance}
+                      {/* {user.balance} */}
+                      {0}
                     </p>
                   </div>
                 </li>
               );
             })}
-          </div>
+            </div>
+            <div className=" absolute bottom-4  ">
+              <Pagination
+                  count={totalPages}
+                  page={currentPage}
+                  onChange={(event, value) => setCurrentPage(value)}
+                />
+              </div>
         </ul>
       </div>
     </div>
