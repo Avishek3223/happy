@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="flex flex-col items-center">
       <NavBar />
-      <div className="my-20 w-[80vw]">
+      <div className="my-20 w-[80vw] ">
         We respect your privacy at <Link to="/"> www.happyprancer.com </Link>,
         are committed to protecting the privacy of all our customers. We do not
         sell, trade, rent, or loan any identifiable information at the

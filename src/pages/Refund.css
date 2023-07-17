@@ -1,0 +1,17 @@
+@media (max-width: 895px) {
+    .nor {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (max-width: 670px) {
+    .nor {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 443px) {
+    .nor {
+      font-size: 1.4rem;
+    }
+  }

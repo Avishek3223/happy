@@ -72,7 +72,7 @@ const NavBar = () => {
               </span>
             ) : (
               <button
-                className="max800:hidden  p-2 py-1 bg-[#1b7571] w-[6.5rem] h-[2.63rem] rounded-md text-white font-russo"
+                className="max800:hidden  p-2 py-1 bg-[#1b7571] w-[6.5rem] h-[2.63rem] rounded-md text-white font-sans"
                 onClick={() => {
                   Navigate("/login");
                 }}
@@ -152,7 +152,7 @@ const NavBar = () => {
             />
           )}
           {isNavActive && (
-            <div className="bg-[#1b7571] z-40  h-screen w-screen text-white RussoOne text-[1.8rem]">
+            <div className="bg-[#1b7571] z-40  h-screen w-screen text-white sans-sarif text-[1.8rem]">
               <ul className="pt-24 flex flex-col items-start px-24 gap-8">
                 {/* Render menu items dynamically */}
                 {navBarContent.map((item) => (

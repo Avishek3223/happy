@@ -19,7 +19,7 @@ const Footer = (props) => {
   return (
     <div>
       <div className="bg-black ">
-        <div className="flex flex-wrap justify-between max600:flex-col max600:justify-center p-12 gap-6 max1358:justify-center ">
+        <div className="flex flex-wrap justify-between max600:flex-col max600:justify-center p-12 gap-6 max1358:justify-center w-[100vw] ">
           <div className="mb-5">
             <a href="/" className="transition duration-200 flex justify-center">
               <img className="w-[15rem]" src={logo} alt="" />                                     {/* Logo  */}
@@ -27,7 +27,7 @@ const Footer = (props) => {
           </div>
 
           <ul className=" flex gap-32 max950:gap-16 text-white flex-wrap max1050:justify-center ">           {/* Quick Links  */}
-            <li className="RussoOne flex flex-col gap-4 items-center text-cente ">
+            <li className="sans-sarif flex flex-col gap-4 items-center text-cente ">
               <h2 className="">Usefull Links</h2>
               <hr className="w-[100%] text-white " />
 

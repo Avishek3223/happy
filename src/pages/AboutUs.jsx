@@ -9,7 +9,7 @@ const AboutUs = () => {
       <div className="flex flex-col items-center ">
         <NavBar />
         <div className=" text-black flex flex-col items-center w-100 mt-[2rem] p-0 overflow-x-hidden w-[90vw] max-w-[80rem]">
-          <h1 className="RussoOne text-[4rem] text-center mt-9">About Us</h1>
+          <h1 className="sans-sarif text-[4rem] text-center mt-9">About Us</h1>
           <p className="mt-8">
             Welcome to HappyPrancer.com, the ultimate destination for dance
             fitness enthusiasts. Our website offers a wide range of online dance

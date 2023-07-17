@@ -53,7 +53,7 @@ export default function Query() {
       <NavBar />
       <div className="flex flex-col gap-16 py-10 items-center Background">
         <div className="flex flex-col items-center ">
-          <h2 className="text-[3rem] RussoOne max500:text-[1.6rem] text-[white]">
+          <h2 className="text-[3rem] sans-sarif max500:text-[1.6rem] text-[white]">
             Have Questions?
           </h2>
           <p className="text-[white]">we are always here for a good cup or coffee</p>
@@ -71,7 +71,7 @@ export default function Query() {
                   <span>Address - C52, Banpur, Khordha, Odisha, India, 752031</span> </div>
                   </div>
             <div className="border-black border-[1px] bg-black my-8 max850:hidden"></div>
-            <div className="RussoOne flex flex-col items-center gap-10 py-4">
+            <div className="sans-sarif font-bold flex flex-col items-center gap-10 py-4">
               <h3>FILL IT UP!</h3>
               <form className="flex flex-col gap-8 items-center">
                 <ul className="w-[25rem] flex flex-col items-center gap-6 max500:w-[70vw]">

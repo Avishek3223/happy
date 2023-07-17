@@ -10,7 +10,7 @@ import PriyankaPng from "../../Utils/images/Testimonial/Priyanka_Biswal.jpg";
 import "./Testimonial.css";
 import { useState } from "react";
 
-const Testimonial = () => {                               
+const Testimonial = () => {
   const testi1 = {
     src: MonalishaPng,
     name: "Monalisha Sahoo",
@@ -32,12 +32,12 @@ const Testimonial = () => {
 
   // {/*                Profile pics state                 */ }
   const [testimonials, setTestimonials] = useState([
-    testi1,                                                     
+    testi1,
     testi2,
     testi3,
   ]);
 
-  const styles = ["ecllip4", "ecllip3", "ecllip2"];                             
+  const styles = ["ecllip4", "ecllip3", "ecllip2"];
 
   const leftClicked = () => {
     setTestimonials((testi) => {
@@ -68,86 +68,89 @@ const Testimonial = () => {
       });
 
       tempTesti.push(firstTesti[0]);
-      
+
       return tempTesti;
     });
   };
-  
+
   return (
-    <div className="RussoOne  max500:h-[22rem] max700:h-[58rem] size h-[48.8rem]  z-10">
-    <div className="Test-size bg-black py-[4rem] flex flex-col item-center  ">
-    <h1 className=" Test-text text-white-250 max478:text-white-[4rem]">
-    TESTIMONIAL
-    </h1>
-    <div className="">
-    <div className=""> 
-        
+    <div className="sans-sarif  max500:h-[22rem] max700:h-[58rem] size h-[50.8rem]  z-10">
+      <div className="Test-size bg-black py-[0.2rem] flex flex-col item-center  ">
+        <h1 className=" Test-text m-8 text-white-250 max478:text-white-[4rem] font-bold">
+          TESTIMONIAL
+        </h1>
+        <div className="">
+          <div className="">
 
-    <ul className="feedback ">
-    <div className="absolute w-screen flex justify-center flex-col min-h-[25rem] ">
-        </div>
-            {testimonials.map((test, i) => {
-              return (
-                <li key={styles[i]}>
-                  <img src={test.src} alt="" className={styles[i]} />
-                </li>
-              );
-            })}
-            <BsArrowLeftCircle
-            color="white"
-            size={"2rem"}
-            className="absolute left-16 cursor-pointer max536:left-6 max500:left-2 max406:h-[1.5rem]"
-            onClick={leftClicked}
-            />
-            <BsArrowRightCircle
-              color="white"
-              size={"2rem"}
-              className="absolute right-16  cursor-pointer max536:right-6 max500:right-2 max406:h-[1.5rem]"
-              onClick={rightClicked}
-            />
-          </ul>
-        </div>
-        <h1 className="mona h-[5rem]   w-[100%]">{testimonials[1].name}</h1>
-        <div className="flex relative z-2 object-cover  justify-center max1050:pl-8 max1050:pr-8 ">
-          <h2 className="text-[1rem]  z-2 des text-white w-[45rem] max800:text-[1rem] max478:text-[0.9rem] text-center font-sans"><span className="text-[1.4rem]">"</span>
-            {testimonials[1].description} <span className="text-[1.4rem]">"</span>
-          </h2>
-        </div>
 
-        <div className="flex  justify-center item-center pt-[1rem]">
-        <img
-        src={yellow_star}
-        className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] max406:h-[1rem]"
-        alt=""
-        />
-        <img
-        src={yellow_star}
-        className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
-        alt=""
-        />
-        <img
-            src={yellow_star}
-            className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
-            alt=""
-          />
-          <img
-            src={yellow_star}
-            className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
-            alt=""
-          />
-          <img
-          src={yellow_star}
-            className="h-[2.6rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem]  "
-            alt=""
-          />
+            <ul className="feedback ">
+              <div className="absolute w-screen flex justify-center flex-col min-h-[25rem] ">
+              </div>
+              {testimonials.map((test, i) => {
+                return (
+                  <li key={styles[i]}>
+                    <img src={test.src} alt="" className={styles[i]} />
+                  </li>
+                );
+              })}
+              <BsArrowLeftCircle
+                color="white"
+                size={"2rem"}
+                className="absolute left-16 cursor-pointer max536:left-6 max500:left-2 max406:h-[1.5rem]"
+                onClick={leftClicked}
+              />
+              <BsArrowRightCircle
+                color="white"
+                size={"2rem"}
+                className="absolute right-16  cursor-pointer max536:right-6 max500:right-2 max406:h-[1.5rem]"
+                onClick={rightClicked}
+              />
+            </ul>
           </div>
-    </div>
-    
-    
-   
+          <h1 className="mona h-[4.5rem] w-[100%] font-[500] " style={{ fontSize: '1.8rem' }}>{testimonials[1].name}</h1>
+          <div className="flex relative z-2 object-cover  justify-center max1050:pl-8 max1050:pr-8">
+            <h2 className="text-[1rem] z-2 pt-4  text-white w-[49rem] max478:text-[0.75rem] text-center font-sans" style={{ letterSpacing: '1.6px' }}>
+              <span className=" text-[1.4rem]">"</span>
+              {testimonials[1].description}
+              <span className="text-[1.4rem]">"</span>
+            </h2>
+          
+          </div>
+
+          <div className="flex justify-center item-center mt-1">
+            <img
+              src={yellow_star}
+              className="h-[1.8rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] max406:h-[1rem]"
+              alt=""
+            />
+            <img
+              src={yellow_star}
+              className="h-[1.8rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
+              alt=""
+            />
+            <img
+              src={yellow_star}
+              className="h-[1.8rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
+              alt=""
+            />
+            <img
+              src={yellow_star}
+              className="h-[1.8rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem] "
+              alt=""
+            />
+            <img
+              src={yellow_star}
+              className="h-[1.8rem] mt-[0.5rem] max800:mt-[0.3rem] max800:h-[1.5rem]  "
+              alt=""
+            />
+          </div>
+        </div>
+
+
+
       </div>
     </div>
-    );
-  };
-  
+  );
+};
+
 export default Testimonial;

@@ -15,15 +15,15 @@ export default function Subscription() {
   return (
     <>
       <div className="Back text-[1.5rem]  flex  flex-col items-center h-[54rem] max980:h-[auto] justify-center gap-[5rem] pb-20 bg-[#f5f5f5]">
-        <div className="text-center mt-20 RussoOne ">
-          <h1>Monthly Membership Subscription </h1>
-          <h3 className="text-[1rem]">see what are the pricing in details</h3>
+        <div className="text-center mt-20 sans-sarif ">
+          <h1 className="font-bold">Monthly Membership Subscription </h1>
+          <h3 className="text-[1rem] font-[600]">see what are the pricing in details</h3>
         </div>
         <ul className="flex flex-wrap justify-center w-[90vw] max-w-[80rem] gap-28 ">
           {Ctx.productList.map((item) => {
             return (
               <li key={item.productId} className="bg-white w-[24rem] h-[40rem] p-10 rounded-[2rem] z-0  flex flex-col items-center gap-8 shadowSubscribe   max450:w-[90vw] max450:gap-4 max450:text-[1rem] max450:min-h-[28rem] max450:h-auto max450:p-12 border-[#225c59] border-[0.1rem]">
-                <p className="text-[1.6rem]">{item.heading}</p>
+                <p className="text-[1.6rem] font-bold">{item.heading}</p>
                 <p className="overflow-hidden text-[1rem]">
                   {item.description}
                 </p>

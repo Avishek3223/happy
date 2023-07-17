@@ -17,7 +17,7 @@ export default function Subscription() {
     <>
       <NavBar />
       <div className="Back text-[1.5rem]  flex  flex-col items-center h-[54rem] max980:h-[auto] justify-center gap-[5rem] pb-20 bg-[#f5f5f5]">
-        <div className="text-center mt-20 RussoOne ">
+        <div className="text-center mt-20 sans-sarif ">
           <h1>Monthly Membership Subscription </h1>
           <h3 className="text-[1rem]">see what are the pricing in details</h3>
         </div>
