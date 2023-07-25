@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import DashBoardPng from "../../Utils/Png/dashboard.png";
+import Context from "../../Context/Context";
 
 const ProfileCard = () => {
+  const Ctx = useContext(Context);
+
+  // Assuming the user's name and email are available in the context
+  const { userName, emailId } = Ctx.userData;
+
+
+
   return (
     <div className="w-52 h-72 bg-[#d9d9d9e5] absolute top-9 right-7 z-20 rounded-2xl overflow-hidden shadow-xl">
       <div
@@ -21,9 +29,11 @@ const ProfileCard = () => {
           alt="Profile"
           className="w-16 h-16 rounded-2xl"
         />
-        <h3 className="mt-3">Harsh Keshri</h3>
-              <p className="text-[0.6rem] mt-1">harshkeshri1234567@gmail.com</p>
-              <button className="p-4 py-2 bg-[#d9d9d959] border-black border-[0.04rem] rounded-2xl mt-5">Go to profile</button>
+        <h3 className="mt-3">{userName}</h3>
+        <p className="text-[0.6rem] mt-1">{emailId}</p>
+        <div className="mt-2">
+        </div>
+        <button className="p-4 py-2 bg-[#d9d9d959] border-black border-[0.04rem] rounded-2xl mt-5">Go to profile</button>
       </div>
     </div>
   );

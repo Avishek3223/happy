@@ -38,7 +38,7 @@ const DashBoard = () => {
       style={{ minHeight: "100vh" }}
     >
       <NavBar />
-      <div className="w-[calc(100vw-1rem)] ml-4 rounded-3xl flex max1050:w-screen max1050:ml-0 h-full max536:rounded-none max536:mt-10 overflow-auto">
+      <div className="w-[calc(100vw-1rem)] ml-4 rounded-3xl flex max1050:w-screen max1050:ml-0 h-full max536:rounded-none overflow-auto">
         <LeftBanner
           displayAfterClick={(data) => {
             setClick(data);

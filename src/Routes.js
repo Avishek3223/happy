@@ -16,6 +16,7 @@ import PaymentSuccessful from "./pages/PaymentSuccessful";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Refund from "./pages/Refund";
+import ProfileUpdate from './Components/DashBoard/ProfileUpdate'
 
 const RoutesContainer = () => {
   return (
@@ -36,6 +37,7 @@ const RoutesContainer = () => {
       <Route path="/terms" element={<Terms />} />
       <Route path="/refund" element={<Refund />} />
       <Route path="*" element={<ErrorPage />} />
+      <Route path="/settings" element={<ProfileUpdate />} />
     </Routes>
   );
 };

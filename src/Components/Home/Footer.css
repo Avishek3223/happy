@@ -1,0 +1,7 @@
+/* Add this CSS to your existing CSS file or use inline styles */
+@media screen and (max-width: 639px) {
+   .footerheight{
+    height: 25rem;
+   }
+}
+  

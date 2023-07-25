@@ -3,5 +3,20 @@
       right: 4rem;
     }
   } */
-  
-  
+
+.email-hover {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-hover:hover {
+  white-space: normal;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
